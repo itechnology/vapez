@@ -1,0 +1,22 @@
+[
+    {
+        "type"      : "Kanthal A1",
+        "resistance": 45,
+        "dimension" : 0.16
+    },
+    {
+        "type"      : "Kanthal A1",
+        "resistance": 45,
+        "dimension" : 0.20
+    },
+    {
+        "type"      : "Kanthal A1",
+        "resistance": 45,
+        "dimension" : 0.25
+    },
+    {
+        "type"      : "Kanthal A1",
+        "resistance": 45,
+        "dimension" : 0.30
+    }
+]

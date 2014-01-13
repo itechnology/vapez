@@ -1,0 +1,5 @@
+# git ignore file
+/_site
+/_exclude
+*.sln
+*.suo

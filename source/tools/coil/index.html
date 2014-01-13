@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html manifest="cache.manifest" ng-app="coil">
+    <head>
+        <meta charset="utf-8" />
+        <title>Coil Calculator</title>
+        
+        <!-- WebApp -->
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-touch-fullscreen" content="yes" />
+
+        <!-- Icon -->
+        <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+
+        <!-- Styles -->
+        <link href="../../content/css/bootstrap.css" rel="stylesheet" />
+    </head>
+    <body ng-controller="CoilCtrl">
+			        <h3 class="text-center">
+				        Coil Calculator
+			        </h3>
+        <div class="container">
+
+            <div class="row">                
+                <div class="col-xs-12">
+                    <label for="exampleInputEmail1">Type de Fil</label>
+              
+                    <select class="form-control">
+                        <option>Kanthal A1</option>
+                    </select>
+                    
+                </div>
+            </div>
+
+            <div class="row">                
+                <div class="col-xs-6">
+                    <label for="exampleInputEmail1">Hauteur</label>
+                    <div class="input-group">
+                        <span type="button" class="btn btn-default btn-lg input-group-addon" ng-click="resistanceDown()"><span class="glyphicon glyphicon-minus"></span></span> 
+                        <input class="form-control" id="exampleInputEmail1" type="number" step="0.1" value="{{resistance}}" />       
+                        <span type="button" class="btn btn-default btn-lg input-group-addon"  ng-click="resistanceUp()"><span class="glyphicon glyphicon-plus"></span></span>
+                    </div>
+                </div>
+
+                <div class="col-xs-6">
+                    <label for="exampleInputEmail1">Largeur</label>
+                    <div class="input-group">
+                        <span type="button" class="btn btn-default btn-lg input-group-addon" ng-click="resistanceDown()"><span class="glyphicon glyphicon-minus"></span></span> 
+                        <input class="form-control" id="exampleInputEmail1" type="number" value="{{resistance}}" />       
+                        <span type="button" class="btn btn-default btn-lg input-group-addon"  ng-click="resistanceUp()"><span class="glyphicon glyphicon-plus"></span></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">                
+                <div class="col-xs-12">
+                    <label for="exampleInputEmail1">Diamètre du coil (mm)</label>
+                    <div class="input-group">
+                        <span type="button" class="btn btn-default btn-lg input-group-addon" ng-click="resistanceDown()"><span class="glyphicon glyphicon-minus"></span></span> 
+                        <input class="form-control" id="exampleInputEmail1" type="number" value="{{resistance}}" />       
+                        <span type="button" class="btn btn-default btn-lg input-group-addon"  ng-click="resistanceUp()"><span class="glyphicon glyphicon-plus"></span></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- http://html5doctor.com/html5-forms-input-types/ -->
+            <div class="row">                
+                <div class="col-xs-12">
+                    <label for="exampleInputEmail1">Nombre de tours</label>
+                    <div class="input-group">
+                        <span type="button" class="btn btn-default btn-lg input-group-addon" ng-click="resistanceDown()"><span class="glyphicon glyphicon-minus"></span></span> 
+                        <input class="form-control" id="exampleInputEmail1" type="range" min="1" max="20" step="1" value="{{resistance}}" />       
+                        <span type="button" class="btn btn-default btn-lg input-group-addon"  ng-click="resistanceUp()"><span class="glyphicon glyphicon-plus"></span></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">                
+                <div class="col-xs-12">
+                    <label for="exampleInputEmail1">Longeur des pattes (mm)</label>
+                    <div class="input-group">
+                        <span type="button" class="btn btn-default btn-lg input-group-addon" ng-click="resistanceDown()"><span class="glyphicon glyphicon-minus"></span></span> 
+                        <input class="form-control" id="exampleInputEmail1" type="number" value="{{resistance}}" />       
+                        <span type="button" class="btn btn-default btn-lg input-group-addon"  ng-click="resistanceUp()"><span class="glyphicon glyphicon-plus"></span></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">                
+                <div class="col-xs-12">
+                    <label for="exampleInputEmail1">Tension (volt)</label>
+                    <div class="input-group">
+                        <span type="button" class="btn btn-default btn-lg input-group-addon" ng-click="resistanceDown()"><span class="glyphicon glyphicon-minus"></span></span> 
+                        <input class="form-control" id="exampleInputEmail1" type="number" value="{{resistance}}" />       
+                        <span type="button" class="btn btn-default btn-lg input-group-addon"  ng-click="resistanceUp()"><span class="glyphicon glyphicon-plus"></span></span>
+                    </div>
+                </div>
+            </div>
+
+            <br />
+
+	        <div class="row clearfix">
+		        <div class="col-md-12 column">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td>Résistance</td>
+                            <td>1.87</td>
+                            <td>ohms</td>
+                        </tr>
+                        <tr>
+                            <td>Puissance Totale</td>
+                            <td>6.54</td>
+                            <td>Watts</td>
+                        </tr>
+                        <tr>
+                            <td>Intensité</td>
+                            <td>1.87</td>
+                            <td>Ampères</td>
+                        </tr>
+                        <tr>
+                            <td>Coeff. de chauffe</td>
+                            <td>0.127</td>
+                            <td>Watts/mm</td>
+                        </tr>
+                        <tr>
+                            <td>Longeur de fil (totale)</td>
+                            <td>51.7</td>
+                            <td>mm</td>
+                        </tr>
+                    </table>
+		        </div>
+	        </div>
+        </div>
+
+        <!-- scripts -->
+        <script src="../../content/js/angular.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
