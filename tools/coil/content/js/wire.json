@@ -1,26 +1,26 @@
 [
     {
-        "type"       : "Kanthal A1 (0.16 / AWG 34)",
+        "type"       : "Kanthal A1 (0.16/AWG 34)",
 		"resistivity": 1.45,        
 		"surface"    : 0.020106192982975
     },
     {
-        "type"       : "Kanthal A1 (0.20 / AWG 32)",
+        "type"       : "Kanthal A1 (0.20/AWG 32)",
 		"resistivity": 1.45,        
 		"surface"    : 0.031415926535898
     },
     {
-        "type"       : "Kanthal A1 (0.25 / AWG 30)",
+        "type"       : "Kanthal A1 (0.25/AWG 30)",
 		"resistivity": 1.45,        
 		"surface"    : 0.04908738521234
     },
     {
-        "type"       : "Kanthal A1 (0.30 / AWG 28)",
+        "type"       : "Kanthal A1 (0.30/AWG 28)",
 		"resistivity": 1.45,        
 		"surface"    : 0.07068583470577
     },
     {
-        "type"       : "Kanthal D (0.16 / AWG 34)",
+        "type"       : "Kanthal D (0.16/AWG 34)",
 		"resistivity": 1.35,        
 		"surface"    : 0.020106192982975
     },

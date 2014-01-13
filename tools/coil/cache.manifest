@@ -1,8 +1,8 @@
 ﻿CACHE MANIFEST
-# version 2
+# version 1
 CACHE:
-../../content/css/bootstrap.css
-../../content/js/angular.js
+../../content/css/bootstrap.min.css
+../../content/js/angular.min.js
 content/js/app.js
 content/img/apple-touch-icon.png
 content/img/apple-touch-icon-76x76.png

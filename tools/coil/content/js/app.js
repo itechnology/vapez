@@ -6,10 +6,10 @@ var coilApp = angular.module("coil", []);
 coilApp.controller("CoilCtrl", function ($scope, $http, $filter) {
 
     // Adjustable
-    $scope.diameter = 1;
-    $scope.spires   = 1;
-    $scope.feet     = 1;
-    $scope.tension  = 3.20;
+    $scope.diameter = "1.0";
+    $scope.spires   = "1.0";
+    $scope.feet     = "1.0";
+    $scope.tension  = "3.2";
 
     // init
     $http.get('content/js/wire.json')
@@ -20,12 +20,16 @@ coilApp.controller("CoilCtrl", function ($scope, $http, $filter) {
 
     //#region functions
     $scope.up = function (target, value) {
-        $scope[target] += value;
+        $scope[target] = parseFloat($scope[target]);
+        $scope[target] = ($scope[target] += value).toFixed(1);
+
         $scope.calculate();
     }
 
     $scope.down = function (target, value) {
-        $scope[target] -= value;
+        $scope[target] = parseFloat($scope[target]);
+        $scope[target] = ($scope[target] -= value).toFixed(1);
+
         $scope.calculate();
     }
 
@@ -34,15 +38,15 @@ coilApp.controller("CoilCtrl", function ($scope, $http, $filter) {
     }
 
     // Results
-    $scope.resistance = 1.00;
-    $scope.watts      = 1.00;
-    $scope.amperes    = 1.00;
-    $scope.coeff      = 1.00;
-    $scope.length     = 1.00;
+    $scope.resistance = 1.0;
+    $scope.watts      = 1.0;
+    $scope.amperes    = 1.0;
+    $scope.coeff      = 1.0;
+    $scope.length     = 1.0;
 
     $scope.calculate = function () {
         var wire = $scope.data[$scope.selected];
-        var dist = (($scope.diameter * Math.PI) * $scope.spires) + ($scope.feet * 2);
+        var dist = ((parseFloat($scope.diameter) * Math.PI) * parseFloat($scope.spires)) + (parseFloat($scope.feet) * 2);
 
 
         // Determine resistance of material
@@ -55,9 +59,9 @@ coilApp.controller("CoilCtrl", function ($scope, $http, $filter) {
         // Surface mm² = (h * w)
 
 
-        $scope.resistance = dist * r;
+        $scope.resistance = (dist * r).toFixed(2);
 
-        $scope.length = dist;
+        $scope.length = dist.toFixed(2);
         //Math.PI;
     }
     //#endregion
