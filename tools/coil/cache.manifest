@@ -4,6 +4,7 @@ CACHE:
 ../../content/css/bootstrap.min.css
 ../../content/js/angular.min.js
 content/js/app.js
+content/js/wire.json
 content/img/apple-touch-icon.png
 content/img/apple-touch-icon-76x76.png
 content/img/apple-touch-icon-120x120.png
