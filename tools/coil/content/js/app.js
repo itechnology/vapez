@@ -12,7 +12,7 @@ coilApp.controller("CoilCtrl", function ($scope, $http, $filter) {
     $scope.volts    = "3.2";
 
     // init
-    $http.get('content/js/wire.json')
+    $http.get("content/js/wire.json")
         .success(function (data) {
             $scope.data = data;
             $scope.selected = 0;
