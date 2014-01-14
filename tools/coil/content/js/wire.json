@@ -25,6 +25,11 @@
 		"surface"    : 0.03
     },
     {
+        "type"       : "Kanthal A1 Flat (0.4x0.1)",
+		"resistivity": 1.45,        
+		"surface"    : 0.04
+    },
+    {
         "type"       : "Kanthal A1 Flat (0.5x0.1)",
 		"resistivity": 1.45,        
 		"surface"    : 0.05
@@ -68,5 +73,15 @@
         "type"       : "Inox 316L (0.30/AWG 28)",
 		"resistivity": 1.08,
 		"surface"    : 0.07068583470577
+    },
+    {
+        "type"       : "Bakero (0.75x0.05)",
+		"resistivity": 1.45,
+		"surface"    : 0.0375
+    },
+    {
+        "type"       : "Fettuccine (0.8x0.05)",
+		"resistivity": 1.45,
+		"surface"    : 0.04
     }
 ]
