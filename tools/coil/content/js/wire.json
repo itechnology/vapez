@@ -1,87 +1,121 @@
 [
-    {
-        "type"       : "Kanthal A1 (0.16/AWG 34)",
-		"resistivity": 1.45,        
-		"surface"    : 0.020106192982975
-    },
-    {
-        "type"       : "Kanthal A1 (0.20/AWG 32)",
-		"resistivity": 1.45,        
-		"surface"    : 0.031415926535898
-    },
-    {
-        "type"       : "Kanthal A1 (0.25/AWG 30)",
-		"resistivity": 1.45,        
-		"surface"    : 0.04908738521234
-    },
-    {
-        "type"       : "Kanthal A1 (0.30/AWG 28)",
-		"resistivity": 1.45,        
-		"surface"    : 0.07068583470577
-    },
-    {
-        "type"       : "Kanthal A1 Flat (0.3x0.1)",
-		"resistivity": 1.45,        
-		"surface"    : 0.03
-    },
-    {
-        "type"       : "Kanthal A1 Flat (0.4x0.1)",
-		"resistivity": 1.45,        
-		"surface"    : 0.04
-    },
-    {
-        "type"       : "Kanthal A1 Flat (0.5x0.1)",
-		"resistivity": 1.45,        
-		"surface"    : 0.05
-    },
-    {
-        "type"       : "Kanthal D (0.16/AWG 34)",
-		"resistivity": 1.35,        
-		"surface"    : 0.020106192982975
-    },
-    {
-        "type"       : "Kanthal D (0.20/AWG 32)",
-		"resistivity": 1.35,        
-		"surface"    : 0.031415926535898
-    },
-    {
-        "type"       : "Kanthal D (0.25/AWG 30)",
-		"resistivity": 1.35,        
-		"surface"    : 0.04908738521234
-    },
-    {
-        "type"       : "Kanthal D (0.30/AWG 28)",
-		"resistivity": 1.35,        
-		"surface"    : 0.07068583470577
-    },
-    {
-        "type"       : "Inox 316L (0.16/AWG 34)",
-		"resistivity": 1.08,
-		"surface"    : 0.020106192982975
-    },
-    {
-        "type"       : "Inox 316L (0.20/AWG 32)",
-		"resistivity": 1.08,
-		"surface"    : 0.031415926535898
-    },
-    {
-        "type"       : "Inox 316L (0.25/AWG 30)",
-		"resistivity": 1.08,
-		"surface"    : 0.04908738521234
-    },
-    {
-        "type"       : "Inox 316L (0.30/AWG 28)",
-		"resistivity": 1.08,
-		"surface"    : 0.07068583470577
-    },
-    {
-        "type"       : "Bakero (0.75x0.05)",
+	{
+		"category"   : "Kanthal A1",
+		"type"       : "0.16 / AWG 34",
+		"width"      : 0.16,
 		"resistivity": 1.45,
-		"surface"    : 0.0375
-    },
-    {
-        "type"       : "Fettuccine (0.8x0.05)",
+		"section"    : 0.020106192982975
+	},
+	{
+		"category"   : "Kanthal A1",
+		"type"       : "0.20 / AWG 32",
+		"width"      : 0.20,
 		"resistivity": 1.45,
-		"surface"    : 0.04
-    }
+		"section"    : 0.031415926535898
+	},
+	{
+		"category"   : "Kanthal A1",
+		"type"       : "0.25 / AWG 30",
+		"width"      : 0.25,
+		"resistivity": 1.45,
+		"section"    : 0.04908738521234
+	},
+	{
+		"category"   : "Kanthal A1",
+		"type"       : "0.30 / AWG 28",
+		"width"      : 0.30,
+		"resistivity": 1.45,
+		"section"    : 0.07068583470577
+	},
+	{
+		"category"   : "Kanthal D",
+		"type"       : "0.16 / AWG 34",
+		"width"      : 0.16,
+		"resistivity": 1.35,
+		"section"    : 0.020106192982975
+	},
+	{
+		"category"   : "Kanthal D",
+		"type"       : "0.20 / AWG 32",
+		"width"      : 0.20,
+		"resistivity": 1.35,
+		"section"    : 0.031415926535898
+	},
+	{
+		"category"   : "Kanthal D",
+		"type"       : "0.25 / AWG 30",
+		"width"      : 0.25,
+		"resistivity": 1.35,
+		"section"    : 0.04908738521234
+	},
+	{
+		"category"   : "Kanthal D",
+		"type"       : "0.30 / AWG 28",
+		"width"      : 0.30,
+		"resistivity": 1.35,
+		"section"    : 0.07068583470577
+	},
+	{
+		"category"   : "Inox 316L",
+		"type"       : "0.16 / AWG 34",
+		"width"      : 0.16,
+		"resistivity": 1.08,
+		"section"    : 0.020106192982975
+	},
+	{
+		"category"   : "Inox 316L",
+		"type"       : "0.20 / AWG 32",
+		"width"      : 0.20,
+		"resistivity": 1.08,
+		"section"    : 0.031415926535898
+	},
+	{
+		"category"   : "Inox 316L",
+		"type"       : "0.25 / AWG 30",
+		"width"      : 0.25,
+		"resistivity": 1.08,
+		"section"    : 0.04908738521234
+	},
+	{
+		"category"   : "Inox 316L",
+		"type"       : "0.30 / AWG 28",
+		"width"      : 0.30,
+		"resistivity": 1.08,
+		"section"    : 0.07068583470577
+	},
+	{
+		"category"   : "Kanthal A1 Flat",
+		"type"       : "0.3 x 0.1",
+		"width"      : 0.30,
+		"resistivity": 1.45,
+		"section"    : 0.03
+	},
+	{
+		"category"   : "Kanthal A1 Flat",
+		"type"       : "0.4 x 0.1",
+		"width"      : 0.40,
+		"resistivity": 1.45,
+		"section"    : 0.04
+	},
+	{
+		"category"   : "Kanthal A1 Flat",
+		"type"       : "0.5 x 0.1",
+		"width"      : 0.50,
+		"resistivity": 1.45,
+		"section"    : 0.05
+	},
+	{
+		"category"   : "Bakero",
+		"type"       : "0.75 x 0.05",
+		"width"      : 0.75,
+		"resistivity": 1.45,
+		"section"    : 0.0375
+	},
+	{
+		"category"   : "Fettuccine",
+		"type"       : "0.8 x 0.05",
+		"width"      : 0.80,
+		"resistivity": 1.45,
+		"section"    : 0.04
+	}
 ]
