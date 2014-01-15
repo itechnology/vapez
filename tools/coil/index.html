@@ -21,24 +21,57 @@
         <link href="content/css/app.css" rel="stylesheet" />
     </head>
     <body ng-controller="CoilCtrl">
-		<h4 class="text-center">
-			Coil Calculator
-		</h4>
-
         <div class="container">
+		    <h4 class="text-center">
+			    Coil Calculator
+		    </h4>            
             <div class="row">
+                <div class="col-xs-8">
+                    <label>Fil: Type</label>
+                    <select class="form-control" ng-change="changed()" ng-model="wire" ng-options="c.category for c in data"></select>
+                </div>
+                <div class="col-xs-4">
+                    <label>&#8486 mm²/m</label>
+                    <input class="form-control" ng-change="changed()" ng-model="wire.resistivity" type="number" step="0.01" />
+                </div>
+            </div>
+
+            <div class="row" ng-show="wire.flat">
+                <div class="col-xs-6">
+                    <label>Fil: Hauteur (mm)</label>
+                    <div class="input-group">
+                        <span type="button" class="btn btn-default btn-lg input-group-addon" ng-click="down('height', 0.01)"><span class="glyphicon glyphicon-minus"></span></span>
+                        <span class="form-control center">{{ height | number:2 }}</span>
+                        <span type="button" class="btn btn-default btn-lg input-group-addon"  ng-click="up('height', 0.01)"><span class="glyphicon glyphicon-plus"></span></span>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <label>Fil: Largeur (mm)</label>
+                    <div class="input-group">
+                        <span type="button" class="btn btn-default btn-lg input-group-addon" ng-click="down('width', 0.01)"><span class="glyphicon glyphicon-minus"></span></span>
+                        <span class="form-control center">{{ width | number:2 }}</span>
+                        <span type="button" class="btn btn-default btn-lg input-group-addon"  ng-click="up('width', 0.01)"><span class="glyphicon glyphicon-plus"></span></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" ng-hide="wire.flat">
                 <div class="col-xs-12">
-                    <label>Type de fil résistif</label>
-                    <select class="form-control" ng-change="changed()" ng-model="wire" ng-options="(c.category + ': ' + c.type) group by c.category for c in data"></select>
+                    <label>Fil: Diamètre (mm)</label>
+                    <div class="input-group">
+                        <span type="button" class="btn btn-default btn-lg input-group-addon" ng-click="down('width', 0.01)"><span class="glyphicon glyphicon-minus"></span></span>
+                        <span class="form-control center">{{ width | number:2 }}</span>
+                        <span type="button" class="btn btn-default btn-lg input-group-addon"  ng-click="up('width', 0.01)"><span class="glyphicon glyphicon-plus"></span></span>
+                    </div>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-xs-12">
-                    <label>Diamètre interne du coil</label>
+                    <label>Coil: Diamètre (mm)</label>
                     <div class="input-group">
                         <span type="button" class="btn btn-default btn-lg input-group-addon" ng-click="down('diameter', 0.1)"><span class="glyphicon glyphicon-minus"></span></span>
-                        <span class="form-control center">{{ diameter | number:1 }} mm</span>
+                        <span class="form-control center">{{ diameter | number:1 }}</span>
                         <span type="button" class="btn btn-default btn-lg input-group-addon"  ng-click="up('diameter', 0.1)"><span class="glyphicon glyphicon-plus"></span></span>
                     </div>
                 </div>
@@ -47,10 +80,10 @@
             <!-- http://html5doctor.com/html5-forms-input-types/ -->
             <div class="row">
                 <div class="col-xs-12">
-                    <label>Nombre de spires</label>
+                    <label>Coil: Spires</label>
                     <div class="input-group">
                         <span type="button" class="btn btn-default btn-lg input-group-addon" ng-click="down('spires', 0.5)"><span class="glyphicon glyphicon-minus"></span></span>
-                        <span class="form-control center">{{ spires }} tours</span>
+                        <span class="form-control center">{{ spires }}</span>
                         <span type="button" class="btn btn-default btn-lg input-group-addon"  ng-click="up('spires', 0.5)"><span class="glyphicon glyphicon-plus"></span></span>
                     </div>
                 </div>
@@ -58,11 +91,30 @@
 
             <div class="row">
                 <div class="col-xs-12">
-                    <label>Longueur de chaque patte</label>
+                    <label>Coil: Pattes (mm)</label>
                     <div class="input-group">
                         <span type="button" class="btn btn-default btn-lg input-group-addon" ng-click="down('feet', 1)"><span class="glyphicon glyphicon-minus"></span></span>
-                        <span class="form-control center">{{ feet }} mm</span>
+                        <span class="form-control center">{{ feet }}</span>
                         <span type="button" class="btn btn-default btn-lg input-group-addon"  ng-click="up('feet', 1)"><span class="glyphicon glyphicon-plus"></span></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-xs-6">
+                    <label>Coil: Nombres</label>
+                    <div class="input-group">
+                        <span type="button" class="btn btn-default btn-lg input-group-addon" ng-click="down('coils', 1)"><span class="glyphicon glyphicon-minus"></span></span>
+                        <span class="form-control center">{{ coils }}</span>
+                        <span type="button" class="btn btn-default btn-lg input-group-addon"  ng-click="up('coils', 1)"><span class="glyphicon glyphicon-plus"></span></span>
+                    </div>
+                </div>
+                <div class="col-xs-6" ng-hide="wire.flat">
+                    <label>Fils: Nombres</label>
+                    <div class="input-group">
+                        <span type="button" class="btn btn-default btn-lg input-group-addon" ng-click="down('wires', 1)"><span class="glyphicon glyphicon-minus"></span></span>
+                        <span class="form-control center">{{ wires }}</span>
+                        <span type="button" class="btn btn-default btn-lg input-group-addon"  ng-click="up('wires', 1)"><span class="glyphicon glyphicon-plus"></span></span>
                     </div>
                 </div>
             </div>
@@ -74,17 +126,17 @@
                     <table class="table table-bordered">
                         <tr>
                             <td width="76%">Résistance</td>
-                            <td><strong>{{ ohms | number:2 }} &#8486</strong></td>                   
+                            <td><strong>{{ ohms | number:2 }} &#8486</strong></td>
                         </tr>
                         <tr>
                             <td>Longeur de fil</td>
                             <td>{{ length | number:2 }} cm</td>
-               
+
                         </tr>
                     </table>
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="col-xs-12">
                     <label>Tension</label>
@@ -95,11 +147,11 @@
                     </div>
                 </div>
             </div>
-            
+
             <br />
 
             <div class="row">
-		        <div class="col-md-12">
+                <div class="col-md-12">
                     <table class="table table-bordered">
                         <tr>
                             <td width="76%">Puissance</td>
@@ -110,8 +162,8 @@
                             <td ng-class="{'warning-amperes': warningAmperes}">{{ amperes | number:2 }} A</td>
                         </tr>
                     </table>
-		        </div>
-	        </div>
+                </div>
+            </div>
         </div>
 
         <!-- scripts -->
