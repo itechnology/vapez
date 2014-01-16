@@ -6,8 +6,12 @@
 .center {
     text-align: center;
 }
-.warning-amperes {
+.amps, .ohms, .watts {
     background-color: #ffe5bb;
+    font-weight: bold;
+}
+.coeff {
+    background-color: #bbffc8;
     font-weight: bold;
 }
 input[type=number]::-webkit-inner-spin-button,

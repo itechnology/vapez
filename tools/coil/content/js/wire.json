@@ -7,6 +7,13 @@
 		"flat"       : false
 	},
 	{
+		"category"   : "Kanthal A1 - Plat",
+		"resistivity": 1.45,
+		"height"     : 0.10,
+		"width"      : 0.50,
+		"flat"       : true
+	},
+	{
 		"category"   : "Kanthal D",
 		"resistivity": 1.35,
 		"height"     : 0.20,
@@ -14,18 +21,18 @@
 		"flat"       : false
 	},
 	{
-		"category"   : "Inox 316L",
+		"category"   : "NiChrome",
 		"resistivity": 1.08,
 		"height"     : 0.20,
 		"width"      : 0.20,
 		"flat"       : false
 	},
 	{
-		"category"   : "Kanthal A1 - Plat",
-		"resistivity": 1.45,
-		"height"     : 0.10,
-		"width"      : 0.50,
-		"flat"       : true
+		"category"   : "Inox 316L",
+		"resistivity": 0.75,
+		"height"     : 0.20,
+		"width"      : 0.20,
+		"flat"       : false
 	},
 	{
 		"category"   : "Bakero",
