@@ -1,4 +1,5 @@
 vapez
 =====
 
-collaborative vape blog
+Blog & outils collaboratifs autour de la vap.
+
