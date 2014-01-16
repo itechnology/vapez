@@ -63,6 +63,9 @@ coilApp.controller("CoilCtrl", function ($scope, $http, $filter) {
         } else {
             // -> Round (diameter in mm)
             section = Math.PI * (Math.pow($scope.width / 2, 2));
+            
+            // since working with round wire
+            $scope.height = $scope.width;
         }
 
         // Resistance/mm (resistivity in ohm/mm²/meter)
@@ -81,14 +84,12 @@ coilApp.controller("CoilCtrl", function ($scope, $http, $filter) {
         // C  = pi x D
         // Lc = sqrt(C^2 + P^2)
         // Lt = N x Lc
-        var width = $scope.wire.width;
-        if ($scope.wires > 1) {
-            width = (width * 3);
-        }
-        var length = Math.sqrt(Math.pow(Math.PI * $scope.diameter, 2) + Math.pow(width, 2));
+        var width  = $scope.width  * $scope.wires;
+        var height = $scope.height * $scope.wires;
+        var length = Math.sqrt(Math.pow(Math.PI * ($scope.diameter + height), 2) + Math.pow(width, 2));
 
         // Total distance (coil + feet)
-        var dist = (length * $scope.spires) + ($scope.feet * 2);
+        var dist = (length * $scope.spires) + ($scope.feet * 2) + $scope.diameter;
 
         // Display
         $scope.ohms    = dist * (resistance/$scope.coils);
@@ -98,6 +99,15 @@ coilApp.controller("CoilCtrl", function ($scope, $http, $filter) {
 
         // Visual effects
         $scope.warningAmperes = ($scope.amperes > 5.5);
+
+        //save();
     };
+
+    function load() {
+        // load from localStorage
+    }
+    function save() {
+        // save to localStorage
+    }
     //#endregion
 });
