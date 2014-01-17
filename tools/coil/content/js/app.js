@@ -3,15 +3,7 @@
 /* App Module */
 var coilApp = angular.module("coil", []);
 
-coilApp.controller("CoilCtrl", function ($scope, $http, $filter) {
-    $scope.close = function() {    
-        $scope.dialog = false;
-    };
-    $scope.open = function (text) {
-        $scope.text   = text;
-        $scope.dialog = true;
-    };
-    
+coilApp.controller("CoilCtrl", function ($scope, $http, $filter) {    
     // default model
     $scope.model = {
         wire: {
@@ -43,17 +35,12 @@ coilApp.controller("CoilCtrl", function ($scope, $http, $filter) {
             load();
             
             if (!$scope.LOADED) {
-                $scope.model.wire = data[0];                
-            } else {
-                for (var i = 0, l = data.length; i < l; i++) {
-                    if ($scope.model.wire.category === data[i].category) {
-                        $scope.model.wire = data[i];
-                    }
-                }
+                $scope.model.wire = data[0];
+                
+                // add missing value
+                $scope.model.wire.count = 1;
             }
             
-            // add missing value
-            $scope.model.wire.count = 1;            
             $scope.calculate();
         });
     
@@ -106,6 +93,7 @@ coilApp.controller("CoilCtrl", function ($scope, $http, $filter) {
         }
 
         // Resistance/mm (resistivity in ohm/mm²/meter)
+        // http://fr.wikipedia.org/wiki/R%C3%A9sistivit%C3%A9
         // http://www.kanthal.com/en/products/materials-in-wire-and-strip-form/wire/resistance-heating-wire-and-resistance-wire/list-of-alloys/
         var resistance = (model.wire.resistivity / (section * model.wire.count)) / 1000;
 
@@ -151,7 +139,17 @@ coilApp.controller("CoilCtrl", function ($scope, $http, $filter) {
 
        save();
     };
-
+    //#endregion
+    
+    //#region Helper Functions
+    $scope.close = function () {
+        $scope.dialog = false;
+    };
+    $scope.open = function (text) {
+        $scope.text   = text;
+        $scope.dialog = true;
+    };
+    
     function load() {
         // load from localStorage
         var model = localStorage.getItem("settings");
@@ -160,7 +158,15 @@ coilApp.controller("CoilCtrl", function ($scope, $http, $filter) {
             model = JSON.parse(model);
 
             if (angular.isObject(model)) {
-                $scope.model  = model;
+                $scope.model.coil = model.coil;
+                for (var i = 0, l = $scope.data.length; i < l; i++) {
+                    if (model.wire.category === $scope.data[i].category) {
+                        $scope.model.wire = $scope.data[i];
+                        // add missing entry
+                        $scope.model.wire.count = model.wire.count;
+                    }
+                }
+                        
                 $scope.LOADED = true;               
             }            
         }
