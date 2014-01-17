@@ -6,11 +6,11 @@
 .center {
     text-align: center;
 }
-.amps, .ohms, .watts {
+.amps, .ohms, .watts, .coeffY {
     background-color: #ffe5bb;
     font-weight: bold;
 }
-.coeff {
+.coeffG {
     background-color: #bbffc8;
     font-weight: bold;
 }

@@ -1,53 +1,106 @@
 ---
 ---
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html
+    lang="fr"
+    itemscope="itemscope"
+    itemtype="http://schema.org/WebPage">
     <head>
         <meta charset="utf-8" />
-        <title>Vapez.FR</title>
+        <title>Vapez.FR, la vap et ce qui l'entoure !</title>
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta http-equiv="cleartype" content="on" />
+        
+        <meta itemprop="keywords" name="keywords" content="vap, vape, vapez, e-cigarette, e-liquide, diy" />
+        <meta itemprop="description" name="description" content="Site collaboratif autour de la vap (outils, bons plans, infos, tutoriaux, reviews, etc)." />
+
+        <!-- SNS -->
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Vapez.FR, la vap et ce qui l'entoure !" />
+        <meta property="og:description" content="Site collaboratif autour de la vap (outils, bons plans, infos, tutoriaux, reviews, etc)." />
+        <!--<meta property="og:image" content="http://vapez.fr/apple-touch-icon-114x114.png" />-->
+        <meta property="og:url" content="http://vapez.fr/" />
+
+        <meta property="og:site_name" content="Vapez.FR" />
+        <meta property="og:locale" content="fr" />
+        <meta property="fb:app_id" content="194169377448891"/>
+        <meta property="fb:admins" content="1215975394" />
+        
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Vapez.FR, la vap et ce qui l'entoure !" />
+        <meta name="twitter:description" content="Site collaboratif autour de la vap (outils, bons plans, infos, tutoriaux, reviews, etc)." />
+        <!--<meta name="twitter:image" content="http://vapez.fr/apple-touch-icon-114x114.png" />-->
+        <meta name="twitter:url" content="http://vapez.fr/" />
+        <!-- SNS -->
+        
         <link href="content/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="content/css/vapez.css" rel="stylesheet" />
     </head>
     <body>
-        <div class="container">
-	        <div class="row clearfix">
-		        <div class="col-md-12 column">
-			        <div class="jumbotron well">
-				        <h1>
-					        Vapez.FR
-				        </h1>
-				        <p>
-					        A chaque vapoteur son outil !
-				        </p>
-			        </div>
-		        </div>
-	        </div>
-	        <div class="row clearfix">
-		        <div class="col-md-6 column">
-			        <h2>
-				        Calculateur de Résistances
-			        </h2>
-			        <p>
-				        Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-			        </p>
-			        <p>
-				        <a class="btn" href="/tools/coil">Acceder »</a>
-			        </p>
-		        </div>
-		        <div class="col-md-6 column">
-			        <h2>
-				        Calculateur Volt/Watt
-			        </h2>
-			        <p>
-				        Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-			        </p>
-			        <p>
-				        <a class="btn" href="#">View details »</a>
-			        </p>
-		        </div>
-	        </div>
-        </div>
+        <div class="container">            
+            <div class="row clearfix">
+                <div class="col-md-12">
+                    <div class="jumbotron well">
+                        <span class="fb-like" data-href='http://www.facebook.com/vapez' data-send='false' data-layout='button_count' data-width='100' data-show-faces='false'></span>                        
+                        <h1>
+                            Vapez.FR
+                        </h1>
+                        <p>
+                            A chaque vapoteur son outil !
+                        </p>                        
+                    </div>
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="col-md-6">
+                    <h2>
+                        Calculateur de Micro-Coil 
+                    </h2>
+                    <p>
+                        Outil pour bien réussir ses micro-coils (résistances) faite maison.
+                        <br/><br/>
+                        Calculez la longeur de fil necessaire en fonction du nombre de tours et du diametre interne, et visualisez sa resistance finale ainsi combien de volt/amperes/puissance finale de votre realisation.
+                    </p>
+                    <p>
+                        <a class="btn" href="/tools/coil">Acceder »</a>
+                    </p>
+                </div>
+<!--                <div class="col-md-6">
+                    <h2>
+                        Calculateur Volt/Watt
+                    </h2>
+                    <p>
+                        Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+                    </p>
+                    <p>
+                        <a class="btn" href="#">View details »</a>
+                    </p>
+                </div>-->
+                
+                <div class="col-md-6">
+                    <div class="fb-post" data-href="https://www.facebook.com/vapez/posts/10202999698772853" data-width="466"><div class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/vapez/posts/10202999698772853">Post</a> by <a href="https://www.facebook.com/vapez">Vapez.FR</a>.</div></div>
+                </div>
+            </div>
+        </div>        
+        
+        <div id="fb-root"></div>
+        <script>
+            fbAsyncInit = function () {
+                FB.init({
+                    appId               : '194169377448891',
+                    //channelUrl        : '//chat.tchatche.com/social/channel',
+                    status              : true,
+                    cookie              : true,
+                    xfbml               : true,
+                    frictionlessRequests: true
+                });
 
+                //FB.getLoginStatus(function (response) {
+                //    imm.Facebook.init(response, config);
+                //});
+            };            
+        </script>
+        <script src="https://connect.facebook.net/fr_FR/all.js"></script>
         {% include analytics.html %}
     </body>
 </html>

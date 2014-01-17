@@ -135,7 +135,10 @@ coilApp.controller("CoilCtrl", function ($scope, $http, $filter) {
         result.cssOhms  = (result.ohms < 0.5);
         result.cssAmps  = (result.amps > 5.5);
         result.cssWatts = (result.watts > 15);
-        result.cssCoeff = (result.coeff >= 0.2 && result.coeff <= 0.3);
+
+        var coeff = Math.round(result.coeff * 100) / 100;
+        result.cssCoeffG = (coeff >= 0.2 && coeff <= 0.3);
+        result.cssCoeffY = (coeff < 0.2 && coeff >= 0.15) || (coeff > 0.3 && coeff <= 0.35);
 
        //save();
     };
