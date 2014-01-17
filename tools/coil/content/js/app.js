@@ -32,7 +32,7 @@ coilApp.controller("CoilCtrl", function ($scope, $http, $filter) {
         .success(function (data) {
             $scope.data = data;
 
-            load();
+            //load();
             
             if (!$scope.LOADED) {
                 $scope.model.wire = data[0];
@@ -137,7 +137,7 @@ coilApp.controller("CoilCtrl", function ($scope, $http, $filter) {
         result.cssWatts = (result.watts > 15);
         result.cssCoeff = (result.coeff >= 0.2 && result.coeff <= 0.3);
 
-       save();
+       //save();
     };
     //#endregion
     
@@ -158,12 +158,14 @@ coilApp.controller("CoilCtrl", function ($scope, $http, $filter) {
             model = JSON.parse(model);
 
             if (angular.isObject(model)) {
-                $scope.model.coil = model.coil;
+                $scope.model = model;
+                // bon c'est chiant ..angular stop being picky !
                 for (var i = 0, l = $scope.data.length; i < l; i++) {
                     if (model.wire.category === $scope.data[i].category) {
-                        $scope.model.wire = $scope.data[i];
+                        $scope.model.wire.category = $scope.data[i].category;
+                        //$scope.model.wire = model.wire;
                         // add missing entry
-                        $scope.model.wire.count = model.wire.count;
+                       // $scope.model.wire.count = model.wire.count;
                     }
                 }
                         
