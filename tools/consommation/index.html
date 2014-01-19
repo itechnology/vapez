@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html ng-app="consommation">
+    <head>
+        <meta charset="utf-8" />
+        <title>Consommation E-Liquide</title>
+
+        <!-- WebApp -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-touch-fullscreen" content="yes" />
+
+        <!-- Icon
+        <link rel="apple-touch-icon" href="content/img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="76x76" href="content/img/apple-touch-icon-76x76.png"/>
+        <link rel="apple-touch-icon" sizes="120x120" href="content/img/apple-touch-icon-120x120.png"/>
+        <link rel="apple-touch-icon" sizes="152x152" href="content/img/apple-touch-icon-152x152.png"/>
+         -->
+        <!-- Styles -->
+        <link href="../../content/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="content/css/app.css" rel="stylesheet" />
+    </head>
+    <body ng-controller="ConsommationCtrl">
+        <div class="container">
+		    <h4 class="text-center">
+			    Consommation E-Liquide
+		    </h4>            
+            
+            <div class="row">
+                <div class="col-xs-12">
+                    <label>Consommation Clopes/jour</label>
+                    <div class="input-group">
+                        <span type="button" class="btn btn-default btn-lg input-group-addon" ng-click="down('cigarette', 'count', 1)"><span class="glyphicon glyphicon-minus"></span></span>
+                        <span class="form-control center">{{ model.cigarette.count }}</span>
+                        <span type="button" class="btn btn-default btn-lg input-group-addon"  ng-click="up('cigarette', 'count' ,1)"><span class="glyphicon glyphicon-plus"></span></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <label>Taux Nicotine/Clop</label>
+                    <div class="input-group">
+                        <span type="button" class="btn btn-default btn-lg input-group-addon" ng-click="down('cigarette','nicotine', 0.05)"><span class="glyphicon glyphicon-minus"></span></span>
+                        <span class="form-control center">{{ model.cigarette.nicotine | number:2 }} mg</span>
+                        <span type="button" class="btn btn-default btn-lg input-group-addon"  ng-click="up('cigarette','nicotine', 0.05)"><span class="glyphicon glyphicon-plus"></span></span>
+                    </div>
+                </div>
+            </div>
+                        
+            <br />
+
+            <div class="row">
+                <div class="col-md-12">
+                    <strong>Nicotine</strong>
+                    <table class="table table-bordered">
+                        <tr>
+                            <td>Totale</td>
+                            <td>{{ result.cigarette.nicotine | number:2 }} mg</td>
+                        </tr>
+                        <tr>
+                            <td>Marge d'error</td>
+                            <td>{{model.cigarette.assimilation}} %</td>
+                        </tr>
+                        <tr>
+                            <td>Réel assimilé</td>
+                            <td>{{ result.cigarette.assimilated | number:2 }} mg</td>
+                        </tr>
+                    </table>
+                    
+                    <strong>E-Liquide</strong>
+                    <table class="table table-bordered">
+                        <tr>
+                            <td>Nicotine équivalente</td>
+                            <td>{{ result.liquid.equivalent | number:2 }} mg</td>
+                        </tr>
+                        <tr>
+                            <td>Taux dassimilation</td>
+                            <td>{{ model.liquid.assimilation }} %</td>
+                        </tr>
+                        <tr>
+                            <td>Nicotine assimilé</td>
+                            <td>{{ result.liquid.assimilated | number:2 }} mg</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-xs-12">
+                    <label>Nicotine E-Liquide</label>
+                    <div class="input-group">
+                        <span type="button" class="btn btn-default btn-lg input-group-addon" ng-click="down('liquid', 'mg', 1)"><span class="glyphicon glyphicon-minus"></span></span>
+                        <span class="form-control center">{{ model.liquid.mg | number:2 }} mg/ml</span>
+                        <span type="button" class="btn btn-default btn-lg input-group-addon"  ng-click="up('liquid', 'mg', 1)"><span class="glyphicon glyphicon-plus"></span></span>
+                    </div>
+                </div>
+            </div>
+            
+            <br />
+
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td>E-Liquide à consommer</td>
+                            <td>{{ result.liquid.consummation | number:2 }} ml/jour</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- http://html5doctor.com/html5-forms-input-types/ -->
+
+        </div>
+
+        <!-- scripts -->
+        <script src="../../content/js/angular.min.js"></script>
+        <script src="content/js/app.js"></script>
+
+        <!-- Analytics -->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-15567888-9', 'vapez.fr');
+          ga('send'  , 'pageview');
+        </script>
+    </body>
+</html>
