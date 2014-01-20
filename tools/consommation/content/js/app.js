@@ -55,8 +55,10 @@ consommationApp.controller("ConsommationCtrl", function ($scope, $http, $filter)
         result.cigarette.nicotine     = model.cigarette.count     * model.cigarette.nicotine;
         result.cigarette.assimilated = result.cigarette.nicotine + (result.cigarette.nicotine * (model.cigarette.assimilation / 100));
 
-        //24 + (24 * 135/100)
-        result.liquid.equivalent   = result.cigarette.assimilated + (result.cigarette.assimilated * (66.66/100));
+        // (1/50*100 - 1) * 100
+        // (((1 / model.liquid.assimilation) * 100) - 1)
+        // Gets the percentage to add, from the percentage to substract ..so we get the original value back
+        result.liquid.equivalent   = result.cigarette.assimilated + (result.cigarette.assimilated * (((1 / model.liquid.assimilation) * 100) - 1));
         result.liquid.assimilated  = result.liquid.equivalent * (model.liquid.assimilation / 100);
         result.liquid.consummation = result.liquid.equivalent / model.liquid.mg;
     };
