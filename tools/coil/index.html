@@ -92,8 +92,47 @@
                     <label>Coil: Pattes (mm)</label>
                     <div class="input-group">
                         <span type="button" class="btn btn-default btn-lg input-group-addon" ng-click="down('coil', 'stubs', 1)"><span class="glyphicon glyphicon-minus"></span></span>
-                        <span class="form-control center">{{ model.coil.stubs }}</span>
+                        <span class="form-control center"><small><em>2x</em></small> {{ model.coil.stubs }}</span>
                         <span type="button" class="btn btn-default btn-lg input-group-addon"  ng-click="up('coil', 'stubs', 1)"><span class="glyphicon glyphicon-plus"></span></span>
+                    </div>
+                </div>
+            </div>
+            
+            <br />
+
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td width="5%"><a href="http://fr.wikipedia.org/wiki/R%C3%A9sistance_%28%C3%A9lectricit%C3%A9%29#La_propri.C3.A9t.C3.A9_physique" target="_blank"><span class="glyphicon glyphicon-info-sign"></span></a></td>
+                            <td width="55%">Résistance</td>
+                            <td ng-class="{'ohms': result.cssOhms}"><strong>{{ result.ohms | number:2 }} &#8486</strong></td>
+                        </tr>
+                        <tr><td></td>
+                            <td>Coeff. de Chauffe</td>
+                            <td ng-class="{'coeffG': result.cssCoeffG, 'coeffY': result.cssCoeffY}">{{ result.coeff | number:2 }} W/mm²</td>
+                        </tr>
+                        <tr>
+                            <td><a href="http://fr.wikipedia.org/wiki/Watt#En_.C3.A9lectricit.C3.A9" target="_blank"><span class="glyphicon glyphicon-info-sign"></span></a></td>
+                            <td>Puissance</td>
+                            <td ng-class="{'watts': result.cssWatts}">{{ result.watts | number:2 }} W</td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://docs.google.com/spreadsheet/ccc?key=0As_VvItYH013dDhWYmFGS04tazhiUVlHSHdNeTlSNGc" target="_blank"><span class="glyphicon glyphicon-warning-sign"></span></a></td>
+                            <td>Intensité</td>
+                            <td ng-class="{'amps': result.cssAmps}">{{ result.amps | number:2 }} A</td>
+                        </tr>                        
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <label>Tension</label>
+                    <div class="input-group">
+                        <span type="button" class="btn btn-default btn-lg input-group-addon" ng-click="down('coil', 'volts', 0.1)"><span class="glyphicon glyphicon-minus"></span></span>
+                        <span class="form-control center">{{ model.coil.volts | number:2 }} V</span>
+                        <span type="button" class="btn btn-default btn-lg input-group-addon"  ng-click="up('coil', 'volts', 0.1)"><span class="glyphicon glyphicon-plus"></span></span>
                     </div>
                 </div>
             </div>
@@ -116,57 +155,19 @@
                     </div>
                 </div>
             </div>
-
+            
             <br />
 
             <div class="row">
                 <div class="col-md-12">
                     <table class="table table-bordered">
-                        <tr>
-                            <td width="67%">Résistance</td>
-                            <td ng-class="{'ohms': result.cssOhms}"><strong>{{ result.ohms | number:2 }} &#8486</strong></td>
-                        </tr>
-                        <tr>
-                            <td>Coeff. de Chauffe</td>
-                            <td ng-class="{'coeffG': result.cssCoeffG, 'coeffY': result.cssCoeffY}">{{ result.coeff | number:2 }} W/mm²</td>
-                        </tr>
-                        <tr>
-                            <td>Largeur d'une Coil</td>
-                            <td>{{ result.width | number:2 }} cm</td>
-                        </tr>
                         <tr>
                             <td>Longeur d'un Fil</td>
                             <td>{{ result.length | number:2 }} cm</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-xs-12">
-                    <label>Tension</label>
-                    <div class="input-group">
-                        <span type="button" class="btn btn-default btn-lg input-group-addon" ng-click="down('coil', 'volts', 0.1)"><span class="glyphicon glyphicon-minus"></span></span>
-                        <span class="form-control center">{{ model.coil.volts | number:2 }} V</span>
-                        <span type="button" class="btn btn-default btn-lg input-group-addon"  ng-click="up('coil', 'volts', 0.1)"><span class="glyphicon glyphicon-plus"></span></span>
-                    </div>
-                </div>
-            </div>
-
-            <br />
-            
-            <div class="row">
-                <div class="col-md-12">
-                    <table class="table table-bordered">
-                        <tr>
-                            <td width="5%"><a href="https://docs.google.com/spreadsheet/ccc?key=0As_VvItYH013dDhWYmFGS04tazhiUVlHSHdNeTlSNGc" target="_blank"><span class="glyphicon glyphicon-warning-sign"></span></a></td>
-                            <td width="62%">Intensité</td>
-                            <td ng-class="{'amps': result.cssAmps}">{{ result.amps | number:2 }} A</td>
                         </tr>                        
                         <tr>
-                            <td width="5%"><a href="http://fr.wikipedia.org/wiki/Watt#En_.C3.A9lectricit.C3.A9" target="_blank"><span class="glyphicon glyphicon-info-sign"></span></a></td>
-                            <td>Puissance</td>
-                            <td ng-class="{'watts': result.cssWatts}">{{ result.watts | number:2 }} W</td>
+                            <td>Largeur d'une Coil</td>
+                            <td>{{ result.width | number:2 }} cm</td>
                         </tr>
                     </table>
                 </div>
