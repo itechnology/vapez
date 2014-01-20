@@ -1,7 +1,7 @@
 "use strict";
 
 /* App Module */
-var coilApp = angular.module("coil", []);
+var coilApp = angular.module("coil", ['ui.bootstrap', 'ui.bootstrap.collapse']);
 
 coilApp.controller("CoilCtrl", function ($scope, $http, $filter) {    
     // default model

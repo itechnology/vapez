@@ -1,7 +1,7 @@
 "use strict";
 
 /* App Module */
-var consommationApp = angular.module("consommation", []);
+var consommationApp = angular.module("consommation", ['ui.bootstrap', 'ui.bootstrap.collapse']);
 
 consommationApp.controller("ConsommationCtrl", function ($scope, $http, $filter) {
     // default model

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="consommation">
+<html  manifest="/cache.manifest" ng-app="consommation">
     <head>
         <meta charset="utf-8" />
         <title>Consommation E-Liquide</title>
@@ -21,11 +21,31 @@
         <link href="content/css/app.css" rel="stylesheet" />
     </head>
     <body ng-controller="ConsommationCtrl">
-		    <h4 class="text-center">
-			    Consommation E-Liquide
-		    </h4>             
-        <div class="container">
-       
+        <nav class="navbar navbar-inverse" role="navigation">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" ng-click="isCollapsed = !isCollapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Vapez.FR</a>
+          </div>
+
+          <div class="collapse navbar-collapse" collapse="!isCollapsed" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                  <li><a href="../coil">Caculateur Micro-Coil</a></li>
+                  <li class="active"><a href="#">Consommation E-Liquide </a></li>
+              </ul>
+
+              <ul class="nav navbar-nav navbar-right">                  
+                  <li><a href="http://facebook.com/vapez">FaceBook</a></li>
+                  <li><a href="https://github.com/itechnology/vapez">GitHub</a></li>
+              </ul>
+          </div>
+        </nav>        
+                   
+        <div class="container">       
             <br/>
             <div class="row">
                 <div class="col-xs-12">
@@ -119,13 +139,11 @@
                     </table>
                 </div>
             </div>           
-
-            <!-- http://html5doctor.com/html5-forms-input-types/ -->
-
         </div>
 
         <!-- scripts -->
         <script src="../../content/js/angular.min.js"></script>
+        <script src="../../content/js/ui-bootstrap-custom-tpls-0.10.0.min.js"></script>
         <script src="content/js/app.js"></script>
 
         <!-- Analytics -->

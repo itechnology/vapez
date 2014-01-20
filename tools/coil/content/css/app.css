@@ -19,3 +19,9 @@ input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+/* Mobile Overrides*/
+@media (max-width: 768px) {
+    .navbar {
+        margin-bottom: 0px;
+    }
+}

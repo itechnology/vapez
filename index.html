@@ -42,8 +42,7 @@
         <link href="content/css/vapez.css" rel="stylesheet" />
     </head>
     <body>
-        <nav class="navbar navbar-default" role="navigation">
-          <!-- Brand and toggle get grouped for better mobile display -->
+        <nav class="navbar navbar-inverse" role="navigation">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
               <span class="sr-only">Toggle navigation</span>
@@ -54,22 +53,22 @@
             <a class="navbar-brand" href="#">Vapez.FR</a>
           </div>
 
-          <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                  <li class="active"><a href="#">Accueil</a></li>
-                  <li><a href="#">Outils</a></li>
-                  <li><a href="#">DIY</a></li>
-                  <li><a href="#">Bon Plans</a></li>
-                  <li><a href="#">Adresses</a></li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Outils <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="tools/coil">Calculateur Micro-Coil</a></li>
+                      <li><a href="tools/consommation">Consommation E-Liquide</a></li>
+                    </ul>
+                  </li>                  
               </ul>
-
 
               <ul class="nav navbar-nav navbar-right">                  
                   <li><a href="http://facebook.com/vapez">FaceBook</a></li>
                   <li><a href="https://github.com/itechnology/vapez">GitHub</a></li>
               </ul>
-          </div><!-- /.navbar-collapse -->
+          </div>
         </nav>
         
         <div class="container">            
@@ -82,7 +81,7 @@
                         </h1>
                         <h3>
                             A chaque vapoteur son outil !
-                        </h3>                        
+                        </h3>                             
                     </div>
                 </div>
             </div>
@@ -160,6 +159,9 @@
                 </div>
             </div>
         </div>
+        
+        <script src="content/js/jquery-1.10.2.min.js"></script>
+        <script src="content/js/bootstrap.min.js"></script>
 
         <div id="fb-root"></div>
         <script>
@@ -176,7 +178,7 @@
                 //FB.getLoginStatus(function (response) {
                 //    vp.Facebook.init(response, config);
                 //});
-            };            
+            };
         </script>
         <script src="https://connect.facebook.net/fr_FR/all.js"></script>
         {% include analytics.html %}

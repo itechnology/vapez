@@ -1,8 +1,9 @@
 ﻿CACHE MANIFEST
-# version 20140115
+# version 20140120-2
 CACHE:
 ../../content/css/bootstrap.min.css
 ../../content/js/angular.min.js
+../../content/js/ui-bootstrap-custom-tpls-0.10.0.min.js
 content/js/app.js
 content/js/wire.json
 content/css/app.css
