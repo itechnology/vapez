@@ -1,4 +1,6 @@
 # git ignore file
+/_layouts
+/_posts
 /_site
 /_exclude
 *.sln
