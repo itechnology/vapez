@@ -1,23 +1,52 @@
 <!DOCTYPE html>
-<html  manifest="/cache.manifest" ng-app="consommation">
+<html
+    lang="fr"
+    itemscope="itemscope"
+    itemtype="http://schema.org/WebApplication"    
+    manifest="cache.manifest"
+    ng-app="consommation">
     <head>
         <meta charset="utf-8" />
-        <title>Consommation E-Liquide</title>
+        
+        <!-- Page -->
+        <title>Consommation E-Liquide</title>        
+        <meta itemprop="keywords" name="keywords" content="vap, vape, vapez, e-cigarette, e-liquide, consommation" />
+        <meta itemprop="description" name="description" content="Calculez combien de e-liquide il faut consommer en fonction du nombre de cigarettes fumées auparavant." />
 
-        <!-- WebApp -->
+        <!-- Mobile -->
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <meta http-equiv="cleartype" content="on" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-touch-fullscreen" content="yes" />
 
         <!-- Icon
-        <link rel="apple-touch-icon" href="content/img/apple-touch-icon.png"/>
-        <link rel="apple-touch-icon" sizes="76x76" href="content/img/apple-touch-icon-76x76.png"/>
-        <link rel="apple-touch-icon" sizes="120x120" href="content/img/apple-touch-icon-120x120.png"/>
-        <link rel="apple-touch-icon" sizes="152x152" href="content/img/apple-touch-icon-152x152.png"/>
+        <link rel="apple-touch-icon" href="content/img/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="content/img/apple-touch-icon-76x76.png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="content/img/apple-touch-icon-120x120.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="content/img/apple-touch-icon-152x152.png" />
          -->
-        <!-- Styles -->
-        <link href="../../content/css/bootstrap.min.css" rel="stylesheet" />
+        
+        <!-- SNS -->
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Vapez.FR, Consommation E-Liquide" />
+        <meta property="og:description" content="Calculez combien de e-liquide il faut consommer en fonction du nombre de cigarettes fumées auparavant." />
+        <!--<meta property="og:image" content="http://vapez.fr/apple-touch-icon-114x114.png" />-->
+        <meta property="og:url" content="http://vapez.fr/tools/consommation/" />
+
+        <meta property="og:site_name" content="Vapez.FR" />
+        <meta property="og:locale" content="fr" />
+        <meta property="fb:app_id" content="194169377448891" />
+        <meta property="fb:admins" content="1215975394" />
+        
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Vapez.FR, Consommation E-Liquide" />
+        <meta name="twitter:description" content="Calculez combien de e-liquide il faut consommer en fonction du nombre de cigarettes fumées auparavant." />
+        <!--<meta name="twitter:image" content="http://vapez.fr/apple-touch-icon-114x114.png" />-->
+        <meta name="twitter:url" content="http://vapez.fr/tools/consommation/" />     
+        
+        <!-- Style -->
+        <link href="../content/css/bootstrap.min.css" rel="stylesheet" />
         <link href="content/css/app.css" rel="stylesheet" />
     </head>
     <body ng-controller="ConsommationCtrl">
@@ -29,17 +58,19 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Vapez.FR</a>
+            <a class="navbar-brand" href="http://vapez.fr">Vapez.FR</a>
           </div>
 
           <div class="collapse navbar-collapse" collapse="!isCollapsed" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                  <li><a href="../coil">Caculateur Micro-Coil</a></li>
+                  <li><a href="../coil/">Caculateur Micro-Coil</a></li>
                   <li class="active"><a href="#">Consommation E-Liquide </a></li>
               </ul>
 
               <ul class="nav navbar-nav navbar-right">                  
                   <li><a href="http://facebook.com/vapez">FaceBook</a></li>
+                  <li><a href="http://plus.google.com/+VapezFr">Google+</a></li>
+                  <li><a href="https://twitter.com/vapezfr">Twitter</a></li>
                   <li><a href="https://github.com/itechnology/vapez">GitHub</a></li>
               </ul>
           </div>
@@ -49,7 +80,13 @@
             <br/>
             <div class="row">
                 <div class="col-xs-12">
-                    <label>Consommation Clopes/jour</label>
+
+
+
+                    <label>
+                        <span class="glyphicon glyphicon-question-sign"popover="Nombre de clops consommé actuellement" popover-placement="right" popover-trigger="mouseenter"></span>
+                        Consommation Clopes/jour
+                    </label>
                     <div class="input-group">
                         <span type="button" class="btn btn-default btn-lg input-group-addon" ng-click="down('cigarette', 'count', 1)"><span class="glyphicon glyphicon-minus"></span></span>
                         <span class="form-control center">{{ model.cigarette.count }}</span>
@@ -60,7 +97,10 @@
 
             <div class="row">
                 <div class="col-xs-12">
-                    <label>Taux Nicotine/clop</label>
+                    <label>
+                        <span class="glyphicon glyphicon-question-sign"popover="Taux de nicotine par clop. Figure sur le paquet." popover-placement="right" popover-trigger="mouseenter"></span>
+                        Taux Nicotine/clop
+                    </label>
                     <div class="input-group">
                         <span type="button" class="btn btn-default btn-lg input-group-addon" ng-click="down('cigarette','nicotine', 0.05)"><span class="glyphicon glyphicon-minus"></span></span>
                         <span class="form-control center">{{ model.cigarette.nicotine | number:2 }} mg</span>
@@ -80,7 +120,7 @@
                             <td>{{ result.cigarette.nicotine | number:2 }} mg</td>
                         </tr>
                         <tr>
-                            <td>Marge d'error</td>
+                            <td>Marge d'erreur</td>
                             <td>{{model.cigarette.assimilation}} %</td>
                         </tr>
                         <tr>
@@ -142,8 +182,8 @@
         </div>
 
         <!-- scripts -->
-        <script src="../../content/js/angular.min.js"></script>
-        <script src="../../content/js/ui-bootstrap-custom-tpls-0.10.0.min.js"></script>
+        <script src="../content/js/angular.min.js"></script>
+        <script src="../content/js/ui-bootstrap-custom-tpls-0.10.0.min.js"></script>
         <script src="content/js/app.js"></script>
 
         <!-- Analytics -->

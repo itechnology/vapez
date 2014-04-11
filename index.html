@@ -7,12 +7,22 @@
     itemtype="http://schema.org/WebPage">
     <head>
         <meta charset="utf-8" />
-        <title>Vapez.FR, la vap et ce qui l'entoure !</title>
+
+        <!-- Page -->
+        <title>Vapez.FR, la vap et ce qui l'entoure !</title>        
+        <meta itemprop="keywords" name="keywords" content="vap, vape, vapez, e-cigarette, e-liquide, diy" />
+        <meta itemprop="description" name="description" content="Site collaboratif autour de la vap (outils, bons plans, infos, tutoriaux, reviews, etc)." />
+
+        <!-- Mobile -->
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <meta http-equiv="cleartype" content="on" />
         
-        <meta itemprop="keywords" name="keywords" content="vap, vape, vapez, e-cigarette, e-liquide, diy" />
-        <meta itemprop="description" name="description" content="Site collaboratif autour de la vap (outils, bons plans, infos, tutoriaux, reviews, etc)." />
+        <!-- Icon
+        <link rel="apple-touch-icon" href="content/img/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="content/img/apple-touch-icon-76x76.png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="content/img/apple-touch-icon-120x120.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="content/img/apple-touch-icon-152x152.png" />
+         -->
 
         <!-- SNS -->
         <meta property="og:type" content="website" />
@@ -23,7 +33,7 @@
 
         <meta property="og:site_name" content="Vapez.FR" />
         <meta property="og:locale" content="fr" />
-        <meta property="fb:app_id" content="194169377448891"/>
+        <meta property="fb:app_id" content="194169377448891" />
         <meta property="fb:admins" content="1215975394" />
         
         <meta name="twitter:card" content="summary" />
@@ -32,45 +42,65 @@
         <!--<meta name="twitter:image" content="http://vapez.fr/apple-touch-icon-114x114.png" />-->
         <meta name="twitter:url" content="http://vapez.fr/" />
         
+        <!-- Search -->
         <meta name="wot-verification" content="8ede973261d99e58bb20"/>
         <meta name="msvalidate.01" content="27E91977FE742F003265A98342295E63" />
         <meta name="google-site-verification" content="TLVNcxkUmVkY96aTkZan5G4-hihQJS27RnvZKHukp5Q" />
         <link href="https://plus.google.com/116235043730153547066" rel="publisher" />
-        <!-- SNS -->
                 
+        <!-- Style -->
         <link href="content/css/bootstrap.min.css" rel="stylesheet" />
         <link href="content/css/vapez.css" rel="stylesheet" />
+        <style>
+            .container {
+                max-width: 1600px;
+            }
+            .lala {
+                background-color: #F5F5F5;
+                border: 1px solid #E3E3E3;
+                box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+            }
+        </style>
     </head>
     <body>
         <nav class="navbar navbar-inverse" role="navigation">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Vapez.FR</a>
-          </div>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Vapez.FR</a>
+            </div>
 
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav">
-                  <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Outils <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="tools/coil">Calculateur Micro-Coil</a></li>
-                      <li><a href="tools/consommation">Consommation E-Liquide</a></li>
-                    </ul>
-                  </li>                  
-              </ul>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Outils <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="tools/coil">Calculateur Micro-Coil</a></li>
+                            <li><a href="tools/consommation">Consommation E-Liquide</a></li>
+                        </ul>
+                    </li>                  
+                </ul>
 
-              <ul class="nav navbar-nav navbar-right">                  
-                  <li><a href="http://facebook.com/vapez">FaceBook</a></li>
-                  <li><a href="https://github.com/itechnology/vapez">GitHub</a></li>
-              </ul>
-          </div>
+                <ul class="nav navbar-nav navbar-right">                  
+                    <li><a href="http://facebook.com/vapez">FaceBook</a></li>
+                    <li><a href="https://github.com/itechnology/vapez">GitHub</a></li>
+                </ul>
+            </div>
         </nav>
         
+        <div class="panel affix lala" style="padding: 5px; margin: 0px 0 0 10px">
+                {% for post in site.posts  %}              
+                <p>
+                    <em>{{ post.date | date_to_string }}</em><br />
+                    * <a href="{{ post.url }}">{{ post.title }}</a>
+                </p>
+                {% endfor %}             
+        </div>        
+
         <div class="container">            
             <div class="row clearfix">
                 <div class="col-md-12">
@@ -176,7 +206,6 @@
             fbAsyncInit = function () {
                 FB.init({
                     appId               : '194169377448891',
-                    //channelUrl        : '//vapez.fr/social/channel',
                     status              : true,
                     cookie              : true,
                     xfbml               : true,
