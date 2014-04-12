@@ -1,9 +1,13 @@
 ﻿CACHE MANIFEST
-# version 20140120-2
+# version 20140412
 CACHE:
-../../content/css/bootstrap.min.css
-../../content/js/angular.min.js
-../../content/js/ui-bootstrap-custom-tpls-0.10.0.min.js
+../content/css/bootstrap.min.css
+../content/js/angular.min.js
+../content/js/ui-bootstrap-custom-tpls-0.10.0.min.js
+../content/fonts/glyphicons-halflings-regular.eot
+../content/fonts/glyphicons-halflings-regular.svg
+../content/fonts/glyphicons-halflings-regular.ttf
+../content/fonts/glyphicons-halflings-regular.woff
 content/js/app.js
 content/js/wire.json
 content/css/app.css
