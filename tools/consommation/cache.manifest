@@ -1,5 +1,5 @@
 ﻿CACHE MANIFEST
-# version 20140412
+# version 20140414
 CACHE:
 ../content/css/bootstrap.min.css
 ../content/js/angular.min.js
@@ -15,3 +15,6 @@ content/img/apple-touch-icon.png
 content/img/apple-touch-icon-76x76.png
 content/img/apple-touch-icon-120x120.png
 content/img/apple-touch-icon-152x152.png
+# network
+NETWORK:
+http://www.google-analytics.com/analytics.js
