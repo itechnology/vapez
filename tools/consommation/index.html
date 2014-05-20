@@ -55,43 +55,46 @@
         <link href="../content/css/bootstrap.min.css" rel="stylesheet" />
         <link href="content/css/app.css" rel="stylesheet" />
     </head>
-    <body ng-controller="ConsommationCtrl">
+    <body ng-controller="ConsommationCtrl">       
         <nav class="navbar navbar-inverse" role="navigation">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" ng-click="isCollapsed = !isCollapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="http://vapez.fr">Vapez.FR</a>
-          </div>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" ng-click="isCollapsed = !isCollapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://vapez.fr" target="{{ target }}">by Vapez.FR</a>
+            </div>
 
-          <div class="collapse navbar-collapse" collapse="!isCollapsed" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav">
-                  <li><a href="../coil/">Caculateur Micro-Coil</a></li>
-                  <li class="active"><a href="#">Consommation E-Liquide </a></li>
-              </ul>
-
-              <ul class="nav navbar-nav navbar-right">                  
-                  <li><a href="http://facebook.com/vapez">FaceBook</a></li>
-                  <li><a href="http://plus.google.com/+VapezFr">Google+</a></li>
-                  <li><a href="https://twitter.com/vapezfr">Twitter</a></li>
-                  <li><a href="https://github.com/itechnology/vapez">GitHub</a></li>
-              </ul>
-          </div>
+            <div class="collapse navbar-collapse" collapse="!isCollapsed" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="../coil/">{{ res.CalculatorTitle }}</a></li>
+                    <li class="active"><a href="#">{{ res.ConsumptionTitle }}</a></li>
+                </ul>
+                           
+                <ul class="nav navbar-nav navbar-right" ng-hide="iframe">
+                    <li class="hidden-xs"><a href="#" ng-click="embed()"><i class="glyphicon glyphicon-share"></i> {{ res.EmbedLink }}</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ res.Social }}<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="http://facebook.com/vapez" target="blank">FaceBook</a></li>
+                            <li><a href="http://plus.google.com/+VapezFr" target="blank">Google+</a></li>
+                            <li><a href="https://twitter.com/vapezfr" target="blank">Twitter</a></li>
+                            <li><a href="http://www.pinterest.com/vapezfr/?change_language=fr" target="blank">Pinterest</a></li>
+                        </ul>
+                    </li>                  
+                </ul>
+            </div>
         </nav>        
                    
         <div class="container">       
             <br/>
             <div class="row">
                 <div class="col-xs-12">
-
-
-
                     <label>
-                        <span class="glyphicon glyphicon-question-sign"popover="Nombre de clops consommé actuellement" popover-placement="right" popover-trigger="mouseenter"></span>
-                        Consommation Clopes/jour
+                        <span class="glyphicon glyphicon-question-sign" popover="{{ res.ConsumptionHelp }}" popover-placement="right" popover-trigger="mouseenter"></span>
+                        {{ res.ConsommationDay }}
                     </label>
                     <div class="input-group">
                         <span type="button" class="btn btn-default btn-lg input-group-addon" ng-click="down('cigarette', 'count', 1)"><span class="glyphicon glyphicon-minus"></span></span>
@@ -104,8 +107,8 @@
             <div class="row">
                 <div class="col-xs-12">
                     <label>
-                        <span class="glyphicon glyphicon-question-sign"popover="Taux de nicotine par clop. Figure sur le paquet." popover-placement="right" popover-trigger="mouseenter"></span>
-                        Taux Nicotine/clop
+                        <span class="glyphicon glyphicon-question-sign" popover="{{ res.NicotineHelp }}" popover-placement="right" popover-trigger="mouseenter"></span>
+                        {{ res.NicotinePercentage }}
                     </label>
                     <div class="input-group">
                         <span type="button" class="btn btn-default btn-lg input-group-addon" ng-click="down('cigarette','nicotine', 0.05)"><span class="glyphicon glyphicon-minus"></span></span>
@@ -119,34 +122,34 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <strong>Nicotine (clops)</strong>
+                    <strong>{{ res.NicotineCigarette }}</strong>
                     <table class="table table-bordered">
                         <tr>
-                            <td>Totale/jour</td>
+                            <td>{{ res.TotalDay }}</td>
                             <td>{{ result.cigarette.nicotine | number:2 }} mg</td>
                         </tr>
                         <tr>
-                            <td>Marge d'erreur</td>
+                            <td>{{ res.ErrorMargin }}</td>
                             <td>{{model.cigarette.assimilation}} %</td>
                         </tr>
                         <tr>
-                            <td>Réel assimilé</td>
+                            <td>{{ res.Assimilated }}</td>
                             <td>{{ result.cigarette.assimilated | number:2 }} mg</td>
                         </tr>
                     </table>
                     
-                    <strong>E-Liquide</strong>
+                    <strong>{{ res.ELiquid }}</strong>
                     <table class="table table-bordered">
                         <tr>
-                            <td>Nicotine équivalente</td>
+                            <td>{{ res.NicotineEquivalent }}</td>
                             <td>{{ result.liquid.equivalent | number:2 }} mg</td>
                         </tr>
                         <tr>
-                            <td>Taux d'assimilation</td>
+                            <td>{{ res.AssimilatedPercent }}</td>
                             <td>{{ model.liquid.assimilation }} %</td>
                         </tr>
                         <tr>
-                            <td>Nicotine assimilé</td>
+                            <td>{{ res.NicotineAssimilated }}</td>
                             <td>{{ result.liquid.assimilated | number:2 }} mg</td>
                         </tr>
                     </table>
@@ -155,7 +158,7 @@
             
             <div class="row">
                 <div class="col-xs-12">
-                    <label>Nicotine E-Liquide</label>
+                    <label>{{ res.NicotineLiquid }}</label>
                     <div class="input-group">
                         <span type="button" class="btn btn-default btn-lg input-group-addon" ng-click="down('liquid', 'mg', 1)"><span class="glyphicon glyphicon-minus"></span></span>
                         <span class="form-control center">{{ model.liquid.mg | number:2 }} mg/ml</span>
@@ -168,18 +171,18 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <strong>E-Liquide à consommer</strong>
+                    <strong>{{ res.LiquidToConsume }}</strong>
                     <table class="table table-bordered">
                         <tr>
-                            <td>Par/jour</td>
+                            <td>{{ res.PerDay }}</td>
                             <td>{{ result.liquid.consummation | number:2 }} ml</td>
                         </tr>
                         <tr>
-                            <td>Par/semaine</td>
+                            <td>{{ res.PerWeek }}</td>
                             <td>{{ result.liquid.consummation * 7 | number:2 }} ml</td>
                         </tr>
                         <tr>
-                            <td>Par/mois</td>
+                            <td>{{ res.PerMonth }}</td>
                             <td>{{ result.liquid.consummation * 30 | number:2 }} ml</td>
                         </tr>
                     </table>
@@ -196,7 +199,7 @@
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
             })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
             ga('create', 'UA-15567888-9', 'vapez.fr');

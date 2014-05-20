@@ -1,7 +1,8 @@
 ﻿CACHE MANIFEST
 # https://developer.mozilla.org/en/docs/HTML/Using_the_application_cache
-# version 20140414
+# version 20140520-1
 CACHE:
+embed.html
 ../content/css/bootstrap.min.css
 ../content/js/angular.min.js
 ../content/js/ui-bootstrap-custom-tpls-0.10.0.min.js
@@ -10,6 +11,8 @@ CACHE:
 ../content/fonts/glyphicons-halflings-regular.ttf
 ../content/fonts/glyphicons-halflings-regular.woff
 content/js/app.js
+content/js/res.fr.json
+content/js/res.en.json
 content/css/app.css
 content/img/apple-touch-icon.png
 content/img/apple-touch-icon-76x76.png
@@ -17,4 +20,4 @@ content/img/apple-touch-icon-120x120.png
 content/img/apple-touch-icon-152x152.png
 # These are allowed to load when a connection is availiable
 NETWORK:
-http://www.google-analytics.com/analytics.js
+*

@@ -1,0 +1,25 @@
+{
+    "ConsumptionTitle": "Consommation E-Liquide",
+    "CalculatorTitle" : "Calculateur Micro-Coil",
+    "Social"          : "Réseaux Sociaux",
+    "EmbedLink"       : "Intégrer",
+    "EmbedTitle"      : "Proposez le sur votre site",
+    "EmbedPreview"    : "Aperçu",
+
+    "WireType"    : "Fil: Type",
+    "WireHeight"  : "Fil: Hauteur",
+    "WireWidth"   : "Fil: Largeur",
+    "WireDiameter": "Fil: Diamètre",
+    "CoilDiameter": "Coil: Diamètre",
+    "CoilTurns"   : "Coil: Spires",
+    "CoilFeet"    : "Coil: Pattes",
+    "Resistance"  : "Résistance",
+    "Coefficient" : "Coefficient de Chauffe",
+    "Power"       : "Puissance",
+    "Amperes"     : "Intensité",
+    "Voltage"     : "Tension",
+    "CoilCount"   : "Coil: Nombres",
+    "WireCount"   : "Fils: Nombres",
+    "WireLength"  : "Longeur d'un Fil",
+    "CoilWidth"   : "Largeur d'une Coil"
+}

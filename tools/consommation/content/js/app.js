@@ -3,7 +3,45 @@
 /* App Module */
 var consommationApp = angular.module("consommation", ['ui.bootstrap', 'ui.bootstrap.collapse']);
 
-consommationApp.controller("ConsommationCtrl", function ($scope, $http, $filter) {
+/* Modal Code */
+var ModalCtrl = function ($scope, $modalInstance, res) {
+    $scope.res = res;
+    $scope.ok = function () {
+        $modalInstance.close();
+    };
+};
+
+consommationApp.controller("ConsommationCtrl", function ($scope, $http, $modal) {
+
+    // Iframe behavior
+    $scope.iframe = (window.top !== window.self);
+    $scope.target = $scope.iframe ? "_blank" : "_self";
+
+    //#region Translations
+    var supported = { "en": "en", "fr": "fr" };
+    var current   = navigator.language.substr(0, 2);
+
+    $http.get("content/js/res." + (supported[current] || "fr") + ".json")
+        .success(function (data) {
+            $scope.res = angular.fromJson(data);
+        });
+    //#endregion
+
+    //#region Modal
+    $scope.embed = function () {
+        $modal.open({
+            templateUrl: "embed.html",
+            controller: ModalCtrl,
+            size: 400,
+            resolve: {
+                res: function () {
+                    return $scope.res;
+                }
+            }
+        });
+    }
+    //#endregion
+
     // default model
     $scope.model = {
         cigarette : {
@@ -28,7 +66,7 @@ consommationApp.controller("ConsommationCtrl", function ($scope, $http, $filter)
         liquid: {
             // placeholder for results
         }
-    };    
+    };
 
     //#region functions
     $scope.up = function (model, attribute, step) {

@@ -55,36 +55,41 @@
     </head>
     <body ng-controller="CoilCtrl">
         <nav class="navbar navbar-inverse" role="navigation">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" ng-click="isCollapsed = !isCollapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="http://vapez.fr">Vapez.FR</a>
-          </div>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" ng-click="isCollapsed = !isCollapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://vapez.fr" target="{{ target }}"><small>by Vapez.FR</small></a>
+            </div>
 
-          <div class="collapse navbar-collapse" collapse="!isCollapsed" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav">
-                  <li class="active"><a href="#">Caculateur Micro-Coil</a></li>
-                  <li><a href="../consommation/">Consommation E-Liquide </a></li>
-              </ul>
+            <div class="collapse navbar-collapse" collapse="!isCollapsed" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">{{ res.CalculatorTitle }}</a></li>
+                    <li><a href="../consommation/">{{ res.ConsumptionTitle }}</a></li>
+                </ul>
 
-              <ul class="nav navbar-nav navbar-right">                  
-                  <li><a href="http://facebook.com/vapez">FaceBook</a></li>
-                  <li><a href="http://plus.google.com/+VapezFr">Google+</a></li>
-                  <li><a href="https://twitter.com/vapezfr">Twitter</a></li>
-                  <li><a href="https://github.com/itechnology/vapez">GitHub</a></li>
-              </ul>
-          </div>
-        </nav>   
-                  
-        <div class="container">
+                <ul class="nav navbar-nav navbar-right" ng-hide="iframe">
+                    <li class="hidden-xs"><a href="#" ng-click="embed()"><i class="glyphicon glyphicon-share"></i> {{ res.EmbedLink }}</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ res.Social }}<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="http://facebook.com/vapez" target="blank">FaceBook</a></li>
+                            <li><a href="http://plus.google.com/+VapezFr" target="blank">Google+</a></li>
+                            <li><a href="https://twitter.com/vapezfr" target="blank">Twitter</a></li>
+                            <li><a href="http://www.pinterest.com/vapezfr/?change_language=fr" target="blank">Pinterest</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>                        
+        <div class="container">        
             <br/>                               
             <div class="row">
                 <div class="col-xs-8">
-                    <label>Fil: Type</label>
+                    <label>{{ res.WireType }}</label>
                     <select class="form-control" ng-change="changed()" ng-model="model.wire" ng-options="c.category for c in data"></select>
                 </div>
                 <div class="col-xs-4">
@@ -95,7 +100,7 @@
 
             <div class="row" ng-show="model.wire.flat">
                 <div class="col-xs-6">
-                    <label>Fil: Hauteur (mm)</label>
+                    <label>{{ res.WireHeight }} (mm)</label>
                     <div class="input-group">
                         <span type="button" class="btn btn-default btn-lg input-group-addon" ng-click="down('wire', 'height', 0.01)"><span class="glyphicon glyphicon-minus"></span></span>
                         <span class="form-control center">{{ model.wire.height | number:2 }}</span>
@@ -103,7 +108,7 @@
                     </div>
                 </div>
                 <div class="col-xs-6">
-                    <label>Fil: Largeur (mm)</label>
+                    <label>{{ res.WireWidth }} (mm)</label>
                     <div class="input-group">
                         <span type="button" class="btn btn-default btn-lg input-group-addon" ng-click="down('wire', 'width', 0.01)"><span class="glyphicon glyphicon-minus"></span></span>
                         <span class="form-control center">{{ model.wire.width | number:2 }}</span>
@@ -114,7 +119,7 @@
 
             <div class="row" ng-hide="model.wire.flat">
                 <div class="col-xs-12">
-                    <label>Fil: Diamètre (mm)</label>
+                    <label>{{ res.WireWidth }} (mm)</label>
                     <div class="input-group">
                         <span type="button" class="btn btn-default btn-lg input-group-addon" ng-click="down('wire', 'width', 0.01)"><span class="glyphicon glyphicon-minus"></span></span>
                         <span class="form-control center">{{ model.wire.width | number:2 }}</span>
@@ -125,7 +130,7 @@
 
             <div class="row">
                 <div class="col-xs-12">
-                    <label>Coil: Diamètre (mm)</label>
+                    <label>{{ res.CoilDiameter }} (mm)</label>
                     <div class="input-group">
                         <span type="button" class="btn btn-default btn-lg input-group-addon" ng-click="down('coil','diameter', 0.1)"><span class="glyphicon glyphicon-minus"></span></span>
                         <span class="form-control center">{{ model.coil.diameter | number:1 }}</span>
@@ -137,7 +142,7 @@
             <!-- http://html5doctor.com/html5-forms-input-types/ -->
             <div class="row">
                 <div class="col-xs-12">
-                    <label>Coil: Spires</label>
+                    <label>{{ res.CoilTurns }}</label>
                     <div class="input-group">
                         <span type="button" class="btn btn-default btn-lg input-group-addon" ng-click="down('coil', 'turns', 0.5)"><span class="glyphicon glyphicon-minus"></span></span>
                         <span class="form-control center">{{ model.coil.turns }}</span>
@@ -148,7 +153,7 @@
 
             <div class="row">
                 <div class="col-xs-12">
-                    <label>Coil: Pattes (mm)</label>
+                    <label>{{ res.CoilFeet }} (mm)</label>
                     <div class="input-group">
                         <span type="button" class="btn btn-default btn-lg input-group-addon" ng-click="down('coil', 'stubs', 1)"><span class="glyphicon glyphicon-minus"></span></span>
                         <span class="form-control center"><small><em>2x</em></small> {{ model.coil.stubs }}</span>
@@ -164,21 +169,21 @@
                     <table class="table table-bordered">
                         <tr>
                             <td width="5%"><a href="../../content/img/safe-vape-chart.jpg" target="_blank"><span class="glyphicon glyphicon-info-sign"></span></a></td>
-                            <td width="55%">Résistance</td>
+                            <td width="55%">{{ res.Resistance }}</td>
                             <td ng-class="{'ohms': result.cssOhms}"><strong>{{ result.ohms | number:2 }} &#8486</strong></td>
                         </tr>
                         <tr><td></td>
-                            <td>Coeff. de Chauffe</td>
+                            <td>{{ res.Coefficient }}</td>
                             <td ng-class="{'coeffG': result.cssCoeffG, 'coeffY': result.cssCoeffY}">{{ result.coeff | number:2 }} W/mm²</td>
                         </tr>
                         <tr>
                             <td><a href="../../content/img/safe-vape-chart.jpg" target="_blank"><span class="glyphicon glyphicon-info-sign"></span></a></td>
-                            <td>Puissance</td>
+                            <td>{{ res.Power }}</td>
                             <td ng-class="{'watts': result.cssWatts}">{{ result.watts | number:2 }} W</td>
                         </tr>
                         <tr>
                             <td><a href="https://docs.google.com/spreadsheet/ccc?key=0As_VvItYH013dDhWYmFGS04tazhiUVlHSHdNeTlSNGc" target="_blank"><span class="glyphicon glyphicon-warning-sign"></span></a></td>
-                            <td>Intensité</td>
+                            <td>{{ res.Amperes }}</td>
                             <td ng-class="{'amps': result.cssAmps}">{{ result.amps | number:2 }} A</td>
                         </tr>                        
                     </table>
@@ -187,7 +192,7 @@
 
             <div class="row">
                 <div class="col-xs-12">
-                    <label>Tension</label>
+                    <label>{{ res.Voltage }}</label>
                     <div class="input-group">
                         <span type="button" class="btn btn-default btn-lg input-group-addon" ng-click="down('coil', 'volts', 0.1)"><span class="glyphicon glyphicon-minus"></span></span>
                         <span class="form-control center">{{ model.coil.volts | number:2 }} V</span>
@@ -198,7 +203,7 @@
             
             <div class="row">
                 <div class="col-xs-6">
-                    <label>Coil: Nombres</label>
+                    <label>{{ res.CoilCount }}</label>
                     <div class="input-group">
                         <span type="button" class="btn btn-default btn-lg input-group-addon" ng-click="down('coil', 'count', 1)"><span class="glyphicon glyphicon-minus"></span></span>
                         <span class="form-control center">{{ model.coil.count }}</span>
@@ -206,7 +211,7 @@
                     </div>
                 </div>
                 <div class="col-xs-6" ng-hide="model.wire.flat">
-                    <label>Fils: Nombres</label>
+                    <label>{{ res.WireCount }}</label>
                     <div class="input-group">
                         <span type="button" class="btn btn-default btn-lg input-group-addon" ng-click="down('wire', 'count', 1)"><span class="glyphicon glyphicon-minus"></span></span>
                         <span class="form-control center">{{ model.wire.count }}</span>
@@ -221,17 +226,16 @@
                 <div class="col-md-12">
                     <table class="table table-bordered">
                         <tr>
-                            <td>Longeur d'un Fil</td>
+                            <td>{{ res.WireLength }}</td>
                             <td>{{ result.length | number:2 }} cm</td>
                         </tr>                        
                         <tr>
-                            <td>Largeur d'une Coil</td>
+                            <td>{{ res.CoilWidth }}</td>
                             <td>{{ result.width | number:2 }} cm</td>
                         </tr>
                     </table>
                 </div>
-            </div>
-                
+            </div>                
         </div>       
         
         <!-- scripts -->
@@ -243,7 +247,7 @@
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
             })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
             ga('create', 'UA-15567888-9', 'vapez.fr');
