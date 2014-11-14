@@ -1,8 +1,9 @@
 ﻿CACHE MANIFEST
 # https://developer.mozilla.org/en/docs/HTML/Using_the_application_cache
-# version 20140522
+# version 20141115
 CACHE:
 embed.html
+help.html
 ../content/css/bootstrap.min.css
 ../content/js/angular.min.js
 ../content/js/ui-bootstrap-custom-tpls-0.10.0.min.js

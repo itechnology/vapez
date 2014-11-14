@@ -11,7 +11,7 @@
     "WireWidth"   : "Fil: Largeur",
     "WireDiameter": "Fil: Diamètre",
     "CoilDiameter": "Coil: Diamètre",
-    "CoilTurns"   : "Coil: Spires",
+    "CoilTurns"   : "Coil: Tours",
     "CoilFeet"    : "Coil: Pattes",
     "Resistance"  : "Résistance",
     "Coefficient" : "Coefficient de Chauffe",
@@ -21,5 +21,17 @@
     "CoilCount"   : "Coil: Nombres",
     "WireCount"   : "Fils: Nombres",
     "WireLength"  : "Longeur d'un Fil",
-    "CoilWidth"   : "Largeur d'une Coil"
+    "CoilWidth"   : "Largeur d'une Coil",
+
+    "Reset":  "Remise à Zéro",
+
+    "CoeffTitle"   : "Coefficient de Chauffe",
+    "CoeffContent1": "Le coefficient de chauffe assure que la résistance chauffe de manière assez régulière sur toute la plage de charge de la batterie.",
+    "CoeffContent2": "Pour une montage idéale",
+    "CoeffContent3": "Batterie au maximum (4.2 Volt)",
+    "CoeffContent4": "Le coefficient doit être aux alentours de 0.28-0.35",
+    "CoeffContent5": "Batterie au minimum (3.2-3.4 Volt)",
+    "CoeffContent6": "Le coefficient doit être aux alentours de 0.18-0.22",
+    "CoeffContent7": "Calculez votre montage d'abord et ensuite vérifiez le coefficient.",
+    "CoeffContent8": "Si tout vas bien, vous aurez une vape consistante du début à la fin de la charge de votre batterie. Parfois on arrive même à vider sa batterie jusqu’à 2.5 volts sans se rendre compte ^^"
 }
