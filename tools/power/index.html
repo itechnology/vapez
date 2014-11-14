@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html ng-app="power">
+    <head>
+        <meta charset="utf-8" />
+        <title>Power Calculator</title>
+
+        <!-- WebApp -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-touch-fullscreen" content="yes" />
+
+        <!-- Icon -->
+        <link rel="apple-touch-icon" href="content/img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="76x76" href="content/img/apple-touch-icon-76x76.png"/>
+        <link rel="apple-touch-icon" sizes="120x120" href="content/img/apple-touch-icon-120x120.png"/>
+        <link rel="apple-touch-icon" sizes="152x152" href="content/img/apple-touch-icon-152x152.png"/>
+
+        <!-- Styles -->
+        <link href="../content/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="content/css/app.css" rel="stylesheet" />
+    </head>
+    <body ng-controller="PowerCtrl">
+        <div class="container">
+		    <h4 class="text-center">
+			    Power Calculator
+		    </h4>            
+            
+            <div class="row">
+                <div class="col-xs-12">
+                    <label>Ohm {{ohm | number:2}}</label>
+                    <div class="input-group">
+                        <input type="range" min="0.3" max="5" step="0.1" ng-model="ohm" ng-change="ohmChange()" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <label>Volt {{volt | number:2}}</label>
+                    <div class="input-group">
+                        <input type="range" min="0.1" max="8.2" step="0.1" ng-model="volt" ng-change="voltChange()" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <label>Watt {{watt | number:2}}</label>
+                    <div class="input-group">
+                        <input type="range" min="0.1" max="672.4" step="0.01" ng-model="watt" ng-change="wattChange()" />
+                    </div>
+                </div>
+            </div>
+            
+
+            
+            <div class="row">
+                <div class="col-xs-12">
+                    <label>Ampere {{amp | number:2}}</label>
+                    <div class="input-group">
+                        <input type="range" min="0.1" max="30" ng-model="amp" ng-change="ampereChange()" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- http://html5doctor.com/html5-forms-input-types/ -->
+
+        </div>
+
+        <!-- scripts -->
+        <script src="../content/js/angular.min.js"></script>
+        <script src="content/js/app.js"></script>
+
+        <!-- Analytics -->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-15567888-9', 'vapez.fr');
+          ga('send'  , 'pageview');
+        </script>
+    </body>
+</html>

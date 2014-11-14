@@ -1,0 +1,44 @@
+[
+	{
+		"category"   : "Kanthal A1",
+		"resistivity": 1.45,
+		"height"     : 0.20,
+		"width"      : 0.20,
+		"flat"       : false
+	},
+	{
+		"category"   : "Kanthal D",
+		"resistivity": 1.35,
+		"height"     : 0.20,
+		"width"      : 0.20,
+		"flat"       : false
+	},
+	{
+		"category"   : "Inox 316L",
+		"resistivity": 1.08,
+		"height"     : 0.20,
+		"width"      : 0.20,
+		"flat"       : false
+	},
+	{
+		"category"   : "Kanthal A1 - Plat",
+		"resistivity": 1.45,
+		"height"     : 0.10,
+		"width"      : 0.50,
+		"flat"       : true
+	},
+	{
+		"category"   : "Bakero",
+		"resistivity": 1.45,
+		"height"     : 0.05,
+		"width"      : 0.75,
+		"flat"       : true
+	},
+	{
+		"category"   : "Fettuccine",
+		"resistivity": 1.45,
+		"height"     : 0.05,
+		"width"      : 0.80,
+		"flat"       : true
+	}
+]

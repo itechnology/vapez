@@ -1,0 +1,12 @@
+﻿CACHE MANIFEST
+# version 20140115
+CACHE:
+../../content/css/bootstrap.min.css
+../../content/js/angular.min.js
+content/js/app.js
+content/js/wire.json
+content/css/app.css
+content/img/apple-touch-icon.png
+content/img/apple-touch-icon-76x76.png
+content/img/apple-touch-icon-120x120.png
+content/img/apple-touch-icon-152x152.png
