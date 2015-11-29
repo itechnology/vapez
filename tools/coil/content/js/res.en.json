@@ -21,5 +21,17 @@
     "CoilCount"   : "Coil: Count",
     "WireCount"   : "Wire: Count",
     "WireLength"  : "Length of a Wire",
-    "CoilWidth"   : "Width of a Coil"
+    "CoilWidth"   : "Width of a Coil",
+
+    "Reset":  "Return to default settings",
+
+    "CoeffTitle"   : "Heating Coefficient",
+    "CoeffContent1": "The heating coefficient makes sure that the resistance is heated relatively evenly across the entire charging range of the battery.",
+    "CoeffContent2": "For an ideal setup",
+    "CoeffContent3": "Battery maximum (4.2 Volt)",
+    "CoeffContent4": "The coefficient should be around 0.28-0.35",
+    "CoeffContent5": "Battery minimum (3.2-3.4 Volt)",
+    "CoeffContent6": "The coefficient should be around 0.18-0.22",
+    "CoeffContent7": "First calculate your setup, and then verify the coefficient.",
+    "CoeffContent8": "If everything is as it should be, you will have a consistent vape from the beginning to the end of your battery charge. Sometimes you can even unload your battery down to 2.5 volts and barely notice ^^"
 }

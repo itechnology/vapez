@@ -1,8 +1,9 @@
 ﻿CACHE MANIFEST
 # https://developer.mozilla.org/en/docs/HTML/Using_the_application_cache
-# version 20140522
+# version 20150918
 CACHE:
 embed.html
+help.html
 ../content/css/bootstrap.min.css
 ../content/js/angular.min.js
 ../content/js/ui-bootstrap-custom-tpls-0.10.0.min.js
@@ -19,7 +20,7 @@ content/img/apple-touch-icon.png
 content/img/apple-touch-icon-76x76.png
 content/img/apple-touch-icon-120x120.png
 content/img/apple-touch-icon-152x152.png
-content/img/safe-vape-chart.png
+content/img/safe-vape-chart.jpg
 # These are allowed to load when a connection is availiable
 NETWORK:
 *
