@@ -1,0 +1,1 @@
+﻿see why top menu dissapears when swithing to latest angula/ui-bootstrap

@@ -1,16 +1,17 @@
 ﻿CACHE MANIFEST
 # https://developer.mozilla.org/en/docs/HTML/Using_the_application_cache
-# version 20150918
+# version 20151129
 CACHE:
 embed.html
 help.html
-../content/css/bootstrap.min.css
-../content/js/angular.min.js
-../content/js/ui-bootstrap-custom-tpls-0.10.0.min.js
-../content/fonts/glyphicons-halflings-regular.eot
-../content/fonts/glyphicons-halflings-regular.svg
-../content/fonts/glyphicons-halflings-regular.ttf
-../content/fonts/glyphicons-halflings-regular.woff
+../content/libs/bootstrap/css/bootstrap.min.css
+../content/libs/angularjs/angular.min.js
+../content/libs/angularjs/ui-bootstrap-tpls-0.14.3.min.js
+../content/libs/bootstrap/fonts/glyphicons-halflings-regular.eot
+../content/libs/bootstrap/fonts/glyphicons-halflings-regular.svg
+../content/libs/bootstrap/fonts/glyphicons-halflings-regular.ttf
+../content/libs/bootstrap/fonts/glyphicons-halflings-regular.woff
+../content/libs/bootstrap/fonts/glyphicons-halflings-regular.woff2
 content/js/app.js
 content/js/res.fr.json
 content/js/res.en.json
