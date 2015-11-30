@@ -4,20 +4,20 @@
 var coilApp = angular.module("coil", ['ui.bootstrap', 'ui.bootstrap.collapse']);
 
 /* Modal Code */
-var ModalCtrl = function ($scope, $modalInstance, res) {
+var ModalCtrl = function ($scope, $uibModalInstance, res) {
     $scope.res = res;
     $scope.ok  = function () {
-        $modalInstance.close();
+        $uibModalInstance.close();
     };
 };
 
-coilApp.controller("CoilCtrl", function ($scope, $http, $modal) {
+coilApp.controller("CoilCtrl", function ($scope, $http, $uibModal) {
 
     // Iframe behavior
     $scope.iframe = (window.top !== window.self);
     $scope.target = $scope.iframe ? "_blank" : "_self";
 
-    //#region Translations, 
+    //#region Translations,
     var supported = { "en": "en", "fr": "fr" };
     var current   = navigator.language.substr(0, 2);
 
@@ -29,7 +29,7 @@ coilApp.controller("CoilCtrl", function ($scope, $http, $modal) {
 
     //#region Modal
     $scope.embed =  function() {
-        $modal.open({
+        $uibModal.open({
             templateUrl: "embed.html",
             controller: ModalCtrl,
             size: 400,
@@ -41,7 +41,7 @@ coilApp.controller("CoilCtrl", function ($scope, $http, $modal) {
         });
     }
     $scope.help = function () {
-        $modal.open({
+        $uibModal.open({
             templateUrl: "help.html",
             controller: ModalCtrl,
             size: 200,
@@ -54,7 +54,7 @@ coilApp.controller("CoilCtrl", function ($scope, $http, $modal) {
     }
     //#endregion
 
-    // default model    
+    // default model
     $scope.model = {
         wire: {
             category   : "Kanthal A1",
@@ -70,13 +70,13 @@ coilApp.controller("CoilCtrl", function ($scope, $http, $modal) {
             stubs   : 4,
             count   : 1,
             volts   : 4.2
-        }        
+        }
     };
 
     $scope.result = {
         // placeholder for results
     };
-    
+
     // init
     $http.get("content/js/wire.json")
         .success(function (data) {
@@ -86,14 +86,14 @@ coilApp.controller("CoilCtrl", function ($scope, $http, $modal) {
 
             if (!$scope.SAVED_DATA) {
                 $scope.model.wire = data[0];
-                
+
                 // add missing value
                 $scope.model.wire.count = 1;
             }
 
             $scope.calculate();
         });
-    
+
     //#region functions
     $scope.up = function (model, attribute, step) {
         $scope.model[model][attribute] += step;
@@ -114,30 +114,30 @@ coilApp.controller("CoilCtrl", function ($scope, $http, $modal) {
     $scope.changed = function () {
         // We changed wire type, so reset default values
         $scope.model.wire.count = 1;
-        
+
         $scope.calculate();
     };
-    
+
     $scope.calculate = function () {
         // http://jsfiddle.net/he25P/17/
-        
+
         var model  = $scope.model;
         var result = $scope.result;
-        
+
         if (model.coil.volts > 8.4) {
             model.coil.volts = 8.4;
         }
 
         // Surface Area
         var section = 0;
-        
+
         if (!!model.wire.flat) {
             // -> Flat (height/width in mm)
             section = (model.wire.height * model.wire.width);
         } else {
             // -> Round (diameter in mm)
             section = Math.PI * (Math.pow(model.wire.width / 2, 2));
-            
+
             // since working with round wire
             model.wire.height = model.wire.width;
         }
@@ -172,17 +172,17 @@ coilApp.controller("CoilCtrl", function ($scope, $http, $modal) {
         result.amps   = model.coil.volts / result.ohms;
         result.length = dist / 10;
         result.width  = (model.coil.turns * width) / 10;
-        
+
         // Thank's to luc.bigjohn !
         // https://docs.google.com/file/d/0BxGcL1JOoEcySXpUTklhZGNfY28/edit
-    
+
         if (model.wire.flat) {
             result.coeff = (result.watts / (model.coil.count * model.wire.count)) / (2 * (model.wire.height + model.wire.width) * dist);
 
         } else {
             result.coeff = (result.watts / (model.coil.count * model.wire.count)) / ((Math.PI * model.wire.width) * dist);
         }
-        
+
         // Visual effects
         result.cssOhms  = (result.ohms < 0.5);
         result.cssAmps  = (result.amps > 5.5);
@@ -194,11 +194,11 @@ coilApp.controller("CoilCtrl", function ($scope, $http, $modal) {
         result.cssCoeffG = coeff >= 0.18 && coeff <= 0.33;
         result.cssCoeffY = (coeff <= 0.17 && coeff >= 0.15) || (coeff >= 0.34 && coeff <= 0.38);
         result.cssCoeffR = coeff < 0.15 || coeff > 0.38;
-        
+
         //save();
     };
     //#endregion
-    
+
     //#region Helper Functions
     $scope.close = function () {
         $scope.dialog = false;
@@ -213,7 +213,7 @@ coilApp.controller("CoilCtrl", function ($scope, $http, $modal) {
         localStorage.clear();
         location.reload(true);
     }
-    
+
     // restore settings from localstorage
     function load() {
         // only load once
@@ -230,13 +230,13 @@ coilApp.controller("CoilCtrl", function ($scope, $http, $modal) {
             if (angular.isObject(model)) {
                 // unfortunately we cannot assign model=model directly because small problem with angular here
                 $scope.model.coil = model.coil;
-          
+
                 // angular being bitchy....
                 for (var i = 0, l = $scope.data.length; i < l; i++) {
                     if (model.wire.category === $scope.data[i].category) {
                         // we have to reset to the data array item
                         $scope.model.wire = $scope.data[i];
-                 
+
                         // and then we have to reassign all the correct settings that where initially saved
                         // need a cleaner way ! we can't even do model.wire=model.wire here...
                         $scope.model.wire.category    = model.wire.category;
@@ -248,13 +248,13 @@ coilApp.controller("CoilCtrl", function ($scope, $http, $modal) {
 
                         $scope.SAVED_DATA = true;
                     }
-                }                                        
-            }            
-        }        
+                }
+            }
+        }
     }
-    
+
     // save settings to localStorage
-    function save() {        
+    function save() {
         localStorage.setItem("settings", JSON.stringify($scope.model));
     }
     //#endregion

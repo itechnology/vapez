@@ -2,14 +2,14 @@
 <html
     lang="fr"
     itemscope="itemscope"
-    itemtype="http://schema.org/WebApplication"    
+    itemtype="http://schema.org/WebApplication"
     manifest="cache.manifest"
     ng-app="consommation">
     <head>
         <meta charset="utf-8" />
-        
+
         <!-- Page -->
-        <title>Consommation E-Liquide</title>        
+        <title>Consommation E-Liquide</title>
         <meta itemprop="keywords" name="keywords" content="vap, vape, vapez, e-cigarette, e-liquide, consommation" />
         <meta itemprop="description" name="description" content="Calculez combien de e-liquide il faut consommer en fonction du nombre de cigarettes fumées auparavant." />
 
@@ -19,17 +19,17 @@
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-touch-fullscreen" content="yes" />
-        
+
         <!-- Keep reference to Domain -->
         <link rel="canonical" href="http://vapez.fr/tools/consommation/"/>
 
-        <!-- Icon
+        <!-- Icon -->
+        <link rel="shortcut icon" href="content/img/favicon.png"/>
         <link rel="apple-touch-icon" href="content/img/apple-touch-icon.png" />
         <link rel="apple-touch-icon" sizes="76x76" href="content/img/apple-touch-icon-76x76.png" />
         <link rel="apple-touch-icon" sizes="120x120" href="content/img/apple-touch-icon-120x120.png" />
         <link rel="apple-touch-icon" sizes="152x152" href="content/img/apple-touch-icon-152x152.png" />
-         -->
-        
+
         <!-- SNS -->
         <link rel="author" href="https://plus.google.com/+VapezFr"/>
         <link rel="publisher" href="https://plus.google.com/+VapezFr"/>
@@ -44,21 +44,21 @@
         <meta property="og:locale" content="fr" />
         <meta property="fb:app_id" content="194169377448891" />
         <meta property="fb:admins" content="1215975394" />
-        
+
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Vapez.FR, Consommation E-Liquide" />
         <meta name="twitter:description" content="Calculez combien de e-liquide il faut consommer en fonction du nombre de cigarettes fumées auparavant." />
         <!--<meta name="twitter:image" content="http://vapez.fr/apple-touch-icon-114x114.png" />-->
-        <meta name="twitter:url" content="http://vapez.fr/tools/consommation/" />                    
-        
+        <meta name="twitter:url" content="http://vapez.fr/tools/consommation/" />
+
         <!-- Style -->
-        <link href="../content/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="../content/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
         <link href="content/css/app.css" rel="stylesheet" />
     </head>
-    <body ng-controller="ConsommationCtrl">       
+    <body ng-controller="ConsommationCtrl">
         <nav class="navbar navbar-inverse" role="navigation">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" ng-click="isCollapsed = !isCollapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -67,12 +67,12 @@
                 <a class="navbar-brand" href="http://vapez.fr" target="{{ target }}">by Vapez.FR</a>
             </div>
 
-            <div class="collapse navbar-collapse" collapse="!isCollapsed" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li><a href="../coil/">{{ res.CalculatorTitle }}</a></li>
                     <li class="active"><a href="#">{{ res.ConsumptionTitle }}</a></li>
                 </ul>
-                           
+
                 <ul class="nav navbar-nav navbar-right" ng-hide="iframe">
                     <li class="hidden-xs"><a href="#" ng-click="embed()"><i class="glyphicon glyphicon-share"></i> {{ res.EmbedLink }}</a></li>
                     <li class="dropdown">
@@ -83,17 +83,17 @@
                             <li><a href="https://twitter.com/vapezfr" target="blank">Twitter</a></li>
                             <li><a href="http://www.pinterest.com/vapezfr/?change_language=fr" target="blank">Pinterest</a></li>
                         </ul>
-                    </li>                  
+                    </li>
                 </ul>
             </div>
-        </nav>        
-                   
-        <div class="container">       
+        </nav>
+
+        <div class="container">
             <br/>
             <div class="row">
                 <div class="col-xs-12">
                     <label>
-                        <span class="glyphicon glyphicon-question-sign" popover="{{ res.ConsumptionHelp }}" popover-placement="right" popover-trigger="mouseenter"></span>
+                        <span class="glyphicon glyphicon-question-sign" uib-popover="{{ res.ConsumptionHelp }}" popover-placement="right" popover-trigger="mouseenter"></span>
                         {{ res.ConsommationDay }}
                     </label>
                     <div class="input-group">
@@ -107,7 +107,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <label>
-                        <span class="glyphicon glyphicon-question-sign" popover="{{ res.NicotineHelp }}" popover-placement="right" popover-trigger="mouseenter"></span>
+                        <span class="glyphicon glyphicon-question-sign" uib-popover="{{ res.NicotineHelp }}" popover-placement="right" popover-trigger="mouseenter"></span>
                         {{ res.NicotinePercentage }}
                     </label>
                     <div class="input-group">
@@ -117,7 +117,7 @@
                     </div>
                 </div>
             </div>
-                        
+
             <br />
 
             <div class="row">
@@ -137,7 +137,7 @@
                             <td>{{ result.cigarette.assimilated | number:2 }} mg</td>
                         </tr>
                     </table>
-                    
+
                     <strong>{{ res.ELiquid }}</strong>
                     <table class="table table-bordered">
                         <tr>
@@ -155,7 +155,7 @@
                     </table>
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="col-xs-12">
                     <label>{{ res.NicotineLiquid }}</label>
@@ -166,7 +166,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <br />
 
             <div class="row">
@@ -187,10 +187,12 @@
                         </tr>
                     </table>
                 </div>
-            </div>           
+            </div>
         </div>
 
         <!-- scripts -->
+        <script src="../content/libs/jquery/jquery-1.11.3.min.js"></script>
+        <script src="../content/libs/bootstrap/js/bootstrap.min.js"></script>
         <script src="../content/libs/angularjs/angular.min.js"></script>
         <script src="../content/libs/angularjs/ui-bootstrap-tpls-0.14.3.min.js"></script>
         <script src="content/js/app.js"></script>

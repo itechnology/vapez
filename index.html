@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html
     lang="fr"
     itemscope="itemscope"
@@ -7,14 +7,14 @@
         <meta charset="utf-8" />
 
         <!-- Page -->
-        <title>Vapez.FR, la vap et ce qui l'entoure !</title>        
+        <title>Vapez.FR, la vap et ce qui l'entoure !</title>
         <meta itemprop="keywords" name="keywords" content="vap, vape, vapez, e-cigarette, e-liquide, diy" />
         <meta itemprop="description" name="description" content="Site collaboratif autour de la vap (outils, bons plans, infos, tutoriaux, reviews, etc)." />
 
         <!-- Mobile -->
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <meta http-equiv="cleartype" content="on" />
-        
+
         <!-- Icon
         <link rel="apple-touch-icon" href="content/img/apple-touch-icon.png" />
         <link rel="apple-touch-icon" sizes="76x76" href="content/img/apple-touch-icon-76x76.png" />
@@ -33,30 +33,25 @@
         <meta property="og:locale" content="fr" />
         <meta property="fb:app_id" content="194169377448891" />
         <meta property="fb:admins" content="1215975394" />
-        
+
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Vapez.FR, la vap et ce qui l'entoure !" />
         <meta name="twitter:description" content="Site collaboratif autour de la vap (outils, bons plans, infos, tutoriaux, reviews, etc)." />
         <!--<meta name="twitter:image" content="http://vapez.fr/apple-touch-icon-114x114.png" />-->
         <meta name="twitter:url" content="http://vapez.fr/" />
-        
+
         <!-- Search -->
         <meta name="wot-verification" content="8ede973261d99e58bb20"/>
         <meta name="msvalidate.01" content="27E91977FE742F003265A98342295E63" />
         <meta name="google-site-verification" content="TLVNcxkUmVkY96aTkZan5G4-hihQJS27RnvZKHukp5Q" />
         <link href="https://plus.google.com/116235043730153547066" rel="publisher" />
-                
+
         <!-- Style -->
         <link href="content/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
         <link href="content/css/vapez.css" rel="stylesheet" />
         <style>
             .container {
                 max-width: 1600px;
-            }
-            .lala {
-                background-color: #F5F5F5;
-                border: 1px solid #E3E3E3;
-                box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
             }
         </style>
     </head>
@@ -69,47 +64,40 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Vapez.FR</a>
+                <a class="navbar-brand" href="#">by Vapez.FR</a>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Outils <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="tools/coil">Calculateur Micro-Coil</a></li>
-                            <li><a href="tools/consommation">Consommation E-Liquide</a></li>
-                        </ul>
-                    </li>                  
+                    <li><a href="tools/coil/">Calculateur Micro-Coil</a></li>
+                    <li><a href="tools/consommation/">Consommation E-Liquide</a></li>
                 </ul>
 
-                <ul class="nav navbar-nav navbar-right">                  
-                    <li><a href="http://facebook.com/vapez">FaceBook</a></li>
-                    <li><a href="https://github.com/itechnology/vapez">GitHub</a></li>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Social Networks<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="http://facebook.com/vapez" target="blank">FaceBook</a></li>
+                            <li><a href="http://plus.google.com/+VapezFr" target="blank">Google+</a></li>
+                            <li><a href="https://twitter.com/vapezfr" target="blank">Twitter</a></li>
+                            <li><a href="http://www.pinterest.com/vapezfr/?change_language=fr" target="blank">Pinterest</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </nav>
-        
-        <div class="panel affix lala" style="padding: 5px; margin: 0 0 0 10px">
-                {% for post in site.posts  %}              
-                <p>
-                    <em>{{ post.date | date_to_string }}</em><br />
-                    * <a href="{{ post.url }}">{{ post.title }}</a>
-                </p>
-                {% endfor %}             
-        </div>        
 
-        <div class="container">            
+        <div class="container">
             <div class="row clearfix">
                 <div class="col-md-12">
                     <div class="jumbotron well">
-                        <span class="fb-like" data-href='http://www.facebook.com/vapez' data-send='false' data-layout='button_count' data-width='100' data-show-faces='false'></span>                        
+                        <span class="fb-like" data-href="http://www.facebook.com/vapez" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></span>
                         <h1>
                             Vapez.FR
                         </h1>
                         <h3>
                             A chaque vapoteur son outil !
-                        </h3>                             
+                        </h3>
                     </div>
                 </div>
             </div>
@@ -131,10 +119,10 @@
                         <p>
                             <a class="btn" href="/tools/consommation">Accéder »</a>
                         </p>
-                    </div>                    
+                    </div>
                     <div class="col-md-12">
                         <h2>
-                            Calculateur de Micro-Coil 
+                            Calculateur de Micro-Coil
                         </h2>
                         <p>
                             Outil pour bien réussir ses micro-coils (résistances) faite maison.
@@ -152,12 +140,12 @@
                         </p>
                     </div>
                 </div>
-                
+
                 <div class="col-md-6">
                     <div class="col-md-12">
                         <div class="fb-post" data-href="https://www.facebook.com/vapez/posts/1453314714881653" data-width="466"><div class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/vapez/posts/10202999698772853">Post</a> by <a href="https://www.facebook.com/vapez">Vapez.FR</a>.</div></div>
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-md-12" style="display:none">
                         <h2>
                             C'est quoi cette page ?
                         </h2>
@@ -171,7 +159,7 @@
                             Un peu de rédaction, et un peu de recueillage d'informations/liens.<br/>
                             <h4>Si ça vous dit de participer, on recherche:</h4>
                         </p>
-                        <ul>                            
+                        <ul>
                             <li><strong>Rédacteurs:</strong> pour animer Facebook & le Blog avec du contenu intéressante</li>
                             <li><strong>Fouineurs:</strong> pour animer Facebook & le Blog avec des liens/images intéressantes</li>
                             <li><strong>Designer:</strong> pour aider à rendre tout ça un poil plus jolie</li>
@@ -187,15 +175,15 @@
             </div>
 
             <div class="row clearfix">
-                <hr />   
-                <div class="col-xs-12" style="text-align: right">                    
+                <hr />
+                <div class="col-xs-12" style="text-align: right">
                     <p>
                         <a href="https://www.mywot.com/en/scorecard/vapez.fr" target="_blank"><img src="https://cdn-cf.mywot.net/files/friendbadges/friend_medium.png" alt="Friend of WOT" /></a>
                     </p>
                 </div>
             </div>
         </div>
-        
+
         <script src="content/libs/jquery/jquery-1.11.3.min.js"></script>
         <script src="content/libs/bootstrap/js/bootstrap.min.js"></script>
 
