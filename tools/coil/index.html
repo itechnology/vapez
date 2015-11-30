@@ -1,14 +1,14 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html
     lang="fr"
     itemscope="itemscope"
-    itemtype="http://schema.org/WebApplication"    
+    itemtype="http://schema.org/WebApplication"
     manifest="cache.manifest"
     ng-app="coil">
     <head>
         <meta charset="utf-8" />
         <!-- Page -->
-        <title>Calculateur de Micro-Coil</title>        
+        <title>Calculateur de Micro-Coil</title>
         <meta itemprop="keywords" name="keywords" content="vap, vape, vapez, e-cigarette, e-liquide, coil" />
         <meta itemprop="description" name="description" content="Calculateur pour bien réussir ses micro-coils" />
 
@@ -18,7 +18,7 @@
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-touch-fullscreen" content="yes" />
-        
+
         <!-- Keep reference to Domain -->
         <link rel="canonical" href="http://vapez.fr/tools/coil/"/>
 
@@ -42,21 +42,21 @@
         <meta property="og:locale" content="fr" />
         <meta property="fb:app_id" content="194169377448891" />
         <meta property="fb:admins" content="1215975394" />
-        
+
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Vapez.FR, Calculateur de Micro-Coil" />
         <meta name="twitter:description" content="Calculateur pour bien réussir ses micro-coils" />
         <meta name="twitter:image" content="http://vapez.fr/tools/coil/content/img/apple-touch-icon-76x76.png" />
-        <meta name="twitter:url" content="http://vapez.fr/tools/coil/" />              
+        <meta name="twitter:url" content="http://vapez.fr/tools/coil/" />
 
         <!-- Style -->
-        <link href="../content/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="../content/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
         <link href="content/css/app.css" rel="stylesheet" />
     </head>
     <body ng-controller="CoilCtrl">
         <nav class="navbar navbar-inverse" role="navigation">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" ng-click="isCollapsed = !isCollapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -65,7 +65,7 @@
                 <a class="navbar-brand" href="http://vapez.fr" target="{{ target }}"><small>by Vapez.FR</small></a>
             </div>
 
-            <div class="collapse navbar-collapse" collapse="!isCollapsed" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse"  id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">{{ res.CalculatorTitle }}</a></li>
                     <li><a href="../consommation/">{{ res.ConsumptionTitle }}</a></li>
@@ -84,9 +84,9 @@
                     </li>
                 </ul>
             </div>
-        </nav>                        
-        <div class="container">        
-            <br/>                               
+        </nav>
+        <div class="container">
+            <br/>
             <div class="row">
                 <div class="col-xs-8">
                     <label>{{ res.WireType }}</label>
@@ -161,7 +161,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <br />
 
             <div class="row">
@@ -185,7 +185,7 @@
                             <td><a href="https://docs.google.com/spreadsheet/ccc?key=0As_VvItYH013dDhWYmFGS04tazhiUVlHSHdNeTlSNGc" target="_blank"><span class="glyphicon glyphicon-warning-sign"></span></a></td>
                             <td>{{ res.Amperes }}</td>
                             <td ng-class="{'amps': result.cssAmps}">{{ result.amps | number:2 }} A</td>
-                        </tr>                        
+                        </tr>
                     </table>
                 </div>
             </div>
@@ -200,7 +200,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="col-xs-6">
                     <label>{{ res.CoilCount }}</label>
@@ -219,7 +219,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <br />
 
             <div class="row">
@@ -228,19 +228,21 @@
                         <tr>
                             <td>{{ res.WireLength }}</td>
                             <td>{{ result.length | number:2 }} cm</td>
-                        </tr>                        
+                        </tr>
                         <tr>
                             <td>{{ res.CoilWidth }}</td>
                             <td>{{ result.width | number:2 }} cm</td>
                         </tr>
                     </table>
                 </div>
-            </div>                
-        </div>       
-        
+            </div>
+        </div>
+
         <!-- scripts -->
+        <script src="../content/libs/jquery/jquery-1.11.3.min.js"></script>
+        <script src="../content/libs/bootstrap/js/bootstrap.min.js"></script>
         <script src="../content/libs/angularjs/angular.min.js"></script>
-        <script src="../content/libs/angularjs/ui-bootstrap-custom-tpls-0.10.0.min.js"></script>
+        <script src="../content/libs/angularjs/ui-bootstrap-tpls-0.14.3.min.js"></script>
         <script src="content/js/app.js"></script>
 
         <!-- Analytics -->

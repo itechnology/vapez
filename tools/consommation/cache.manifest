@@ -3,6 +3,8 @@
 # version 20151129
 CACHE:
 embed.html
+../content/libs/jquery/jquery-1.11.3.min.js
+../content/libs/bootstrap/js/bootstrap.min.js
 ../content/libs/bootstrap/css/bootstrap.min.css
 ../content/libs/angularjs/angular.min.js
 ../content/libs/angularjs/ui-bootstrap-tpls-0.14.3.min.js
@@ -15,6 +17,7 @@ content/js/app.js
 content/js/res.fr.json
 content/js/res.en.json
 content/css/app.css
+content/img/favicon.png
 content/img/apple-touch-icon.png
 content/img/apple-touch-icon-76x76.png
 content/img/apple-touch-icon-120x120.png

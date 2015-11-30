@@ -4,14 +4,14 @@
 var consommationApp = angular.module("consommation", ['ui.bootstrap', 'ui.bootstrap.collapse']);
 
 /* Modal Code */
-var ModalCtrl = function ($scope, $modalInstance, res) {
+var ModalCtrl = function ($scope, $uibModalInstance, res) {
     $scope.res = res;
     $scope.ok = function () {
-        $modalInstance.close();
+        $uibModalInstance.close();
     };
 };
 
-consommationApp.controller("ConsommationCtrl", function ($scope, $http, $modal) {
+consommationApp.controller("ConsommationCtrl", function ($scope, $http, $uibModal) {
 
     // Iframe behavior
     $scope.iframe = (window.top !== window.self);
@@ -29,7 +29,7 @@ consommationApp.controller("ConsommationCtrl", function ($scope, $http, $modal) 
 
     //#region Modal
     $scope.embed = function () {
-        $modal.open({
+        $uibModal.open({
             templateUrl: "embed.html",
             controller: ModalCtrl,
             size: 400,
@@ -49,7 +49,7 @@ consommationApp.controller("ConsommationCtrl", function ($scope, $http, $modal) 
             nicotine    : 0.9,
             assimilation: 35
         },
-        liquid: {            
+        liquid: {
             assimilation: 60,
             mg: 18
         },
@@ -59,9 +59,9 @@ consommationApp.controller("ConsommationCtrl", function ($scope, $http, $modal) 
         assimilation: 2.5
     };
 
-    $scope.result = {        
+    $scope.result = {
         cigarette: {
-            // placeholder for results    
+            // placeholder for results
         },
         liquid: {
             // placeholder for results
@@ -100,7 +100,7 @@ consommationApp.controller("ConsommationCtrl", function ($scope, $http, $modal) 
         result.liquid.assimilated  = result.liquid.equivalent * (model.liquid.assimilation / 100);
         result.liquid.consummation = result.liquid.equivalent / model.liquid.mg;
     };
-    
+
     $scope.calculate();
     //#endregion
 });
