@@ -51,7 +51,10 @@
 
         <!-- Style -->
         <link href="../content/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-        <link href="content/css/app.css" rel="stylesheet" />
+        <link href="content/css/app.css" rel="stylesheet"/>
+
+        <!-- Up here to stop FOUC -->
+        <script src="../content/libs/angularjs/angular.min.js"></script>
     </head>
     <body ng-controller="CoilCtrl" ng-cloak>
         <nav class="navbar navbar-inverse" role="navigation">
@@ -241,7 +244,6 @@
         <!-- scripts -->
         <script src="../content/libs/jquery/jquery-1.11.3.min.js"></script>
         <script src="../content/libs/bootstrap/js/bootstrap.min.js"></script>
-        <script src="../content/libs/angularjs/angular.min.js"></script>
         <script src="../content/libs/angularjs/ui-bootstrap-tpls-0.14.3.min.js"></script>
         <script src="content/js/app.js"></script>
 
