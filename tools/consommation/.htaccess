@@ -1,0 +1,4 @@
+AddType text/cache-manifest appcache manifest
+<IfModule mod_mime.c>
+	AddType text/cache-manifest .appcache .manifest
+</IfModule>
