@@ -18,10 +18,10 @@ coilApp.controller("CoilCtrl", function ($scope, $http, $uibModal) {
     $scope.target = $scope.iframe ? "_blank" : "_self";
 
     //#region Translations,
-    var supported = { "en": "en", "fr": "fr" };
+    var supported = { "en": "en", "fr": "fr", "it": "it" };
     var current   = navigator.language.substr(0, 2);
 
-    $http.get("content/js/res." + (supported[current] || "fr") + ".json")
+    $http.get("content/js/res." + (supported[current] || "en") + ".json")
         .success(function (data) {
             $scope.res = angular.fromJson(data);
         });
@@ -142,7 +142,7 @@ coilApp.controller("CoilCtrl", function ($scope, $http, $uibModal) {
             model.wire.height = model.wire.width;
         }
 
-        // Resistance/mm (resistivity in ohm/mm²/meter)
+        // Resistance/mm (resistivity in ohm/mmï¿½/meter)
         // http://fr.wikipedia.org/wiki/R%C3%A9sistivit%C3%A9
         // http://www.kanthal.com/en/products/materials-in-wire-and-strip-form/wire/resistance-heating-wire-and-resistance-wire/list-of-alloys/
         var resistance = (model.wire.resistivity / (section * model.wire.count)) / 1000;
