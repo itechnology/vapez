@@ -1,0 +1,37 @@
+{
+    "ConsumptionTitle": "E-Liquid Calculator",
+    "CalculatorTitle" : "Calcolatrice Micro-Coil",
+    "Social"          : "Social Networks",
+    "EmbedLink"       : "Incorporare",
+    "EmbedTitle"      : "Proporre sul tuo sito",
+    "EmbedPreview"    : "Anteprima",
+
+    "WireType"    : "Filo: Tipo",
+    "WireHeight"  : "Filo: Altezza",
+    "WireWidth"   : "Filo: Larghezza",
+    "WireDiameter": "Filo: Diametro",
+    "CoilDiameter": "Coil: Diametro",
+    "CoilTurns"   : "Bobina: Giri",
+    "CoilFeet"    : "Bobina: Piedi",
+    "Resistance"  : "Resistenza",
+    "Coefficient" : "Riscaldamento Coefficient",
+    "Power"       : "Energia",
+    "Amperes"     : "Ampere",
+    "Voltage"     : "Tensione",
+    "CoilCount"   : "Bobina: Contare",
+    "WireCount"   : "Filo: Contare",
+    "WireLength"  : "Lunghezza del cavo",
+    "CoilWidth"   : "Larghezza della bobina",
+
+    "Reset":  "Ripristinare le impostazioni predefinite",
+
+    "CoeffTitle"   : "Riscaldamento Coefficient",
+    "CoeffContent1": "Il coefficiente di riscaldamento provoca la resistenza viene riscaldata in modo relativamente uniforme su tutta la gamma della carica della batteria.",
+    "CoeffContent2": "Per un setup ideale",
+    "CoeffContent3": "Massima della batteria (4.2 Volt)",
+    "CoeffContent4": "Il coefficiente dovrebbe essere di circa 0.28-0.35",
+    "CoeffContent5": "Minima della batteria (3.2-3.4 Volt)",
+    "CoeffContent6": "Il coefficiente dovrebbe essere di circa 0.18-0.22",
+    "CoeffContent7": "Prima di calcolare la configurazione, e quindi verificare il coefficiente.",
+    "CoeffContent8": "Se tutto è come dovrebbe essere, si avrà un Vape coerente dall'inizio alla fine della carica della batteria. A volte si può anche scaricare la batteria fino a 2,5 volt ed a mala pena notare ^^"
+}

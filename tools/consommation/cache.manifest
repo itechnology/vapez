@@ -1,6 +1,6 @@
 ﻿CACHE MANIFEST
 # https://developer.mozilla.org/en/docs/HTML/Using_the_application_cache
-# version 20151129
+# version 20170201
 CACHE:
 embed.html
 ../content/libs/jquery/jquery-1.11.3.min.js
@@ -16,6 +16,7 @@ embed.html
 content/js/app.js
 content/js/res.fr.json
 content/js/res.en.json
+content/js/res.it.json
 content/css/app.css
 content/img/favicon.png
 content/img/apple-touch-icon.png

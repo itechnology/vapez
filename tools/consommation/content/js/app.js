@@ -18,10 +18,10 @@ consommationApp.controller("ConsommationCtrl", function ($scope, $http, $uibModa
     $scope.target = $scope.iframe ? "_blank" : "_self";
 
     //#region Translations
-    var supported = { "en": "en", "fr": "fr" };
+    var supported = { "en": "en", "fr": "fr", "it": "it" };
     var current   = navigator.language.substr(0, 2);
 
-    $http.get("content/js/res." + (supported[current] || "fr") + ".json")
+    $http.get("content/js/res." + (supported[current] || "en") + ".json")
         .success(function (data) {
             $scope.res = angular.fromJson(data);
         });

@@ -1,0 +1,26 @@
+{
+    "ConsumptionTitle": "E-Liquid Calculator",
+    "CalculatorTitle" : "Calcolatrice Micro-Coil",
+    "Social"          : "Social Networks",
+    "EmbedLink"       : "Incorporare",
+    "EmbedTitle"      : "Proporre sul tuo sito",
+    "EmbedPreview"    : "Anteprima",
+
+    "ConsommationDay"    : "Consumi/giorno",
+    "ConsumptionHelp"    : "Numero di sigarette attualmente consumata.",
+    "NicotinePercentage" : "Nicotina/sigaretta",
+    "NicotineHelp"       : "Quantità di nicotina per sigaretta. Le cifre sulla confezione.",
+    "NicotineCigarette"  : "Nicotina (sigarette)",
+    "TotalDay"           : "Totale/giorno",
+    "ErrorMargin"        : "Margine di errore",
+    "Assimilated"        : "Reale assimilato",
+    "ELiquid"            : "E-Liquid",
+    "NicotineEquivalent" : "Equivalenza nicotina",
+    "AssimilatedPercent" : "Percentuale di assimilazione",
+    "NicotineAssimilated": "Nicotina assimilata",
+    "NicotineLiquid"     : "Nicotina E-Liquid",
+    "LiquidToConsume"    : "E-Liquid per consumare",
+    "PerDay"             : "Al/giorno",
+    "PerWeek"            : "Al/settimana",
+    "PerMonth"           : "Al/mese"
+}
