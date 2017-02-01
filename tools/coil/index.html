@@ -20,7 +20,7 @@
         <meta name="apple-touch-fullscreen" content="yes" />
 
         <!-- Keep reference to Domain -->
-        <link rel="canonical" href="http://vapez.fr/tools/coil/"/>
+        <link rel="canonical" href="https://vapez.fr/tools/coil/"/>
 
         <!-- Icon -->
         <link rel="apple-touch-icon" href="content/img/apple-touch-icon.png"/>
@@ -35,8 +35,8 @@
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Vapez.FR, Calculateur de Micro-Coil" />
         <meta property="og:description" content="Calculateur pour bien réussir ses micro-coils" />
-        <meta property="og:image" content="http://vapez.fr/tools/coil/content/img/apple-touch-icon-76x76.png" itemprop="image" />
-        <meta property="og:url" content="http://vapez.fr/tools/coil/" />
+        <meta property="og:image" content="https://vapez.fr/tools/coil/content/img/apple-touch-icon-76x76.png" itemprop="image" />
+        <meta property="og:url" content="https://vapez.fr/tools/coil/" />
 
         <meta property="og:site_name" content="Vapez.FR" />
         <meta property="og:locale" content="fr" />
@@ -46,14 +46,17 @@
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Vapez.FR, Calculateur de Micro-Coil" />
         <meta name="twitter:description" content="Calculateur pour bien réussir ses micro-coils" />
-        <meta name="twitter:image" content="http://vapez.fr/tools/coil/content/img/apple-touch-icon-76x76.png" />
-        <meta name="twitter:url" content="http://vapez.fr/tools/coil/" />
+        <meta name="twitter:image" content="https://vapez.fr/tools/coil/content/img/apple-touch-icon-76x76.png" />
+        <meta name="twitter:url" content="https://vapez.fr/tools/coil/" />
 
         <!-- Style -->
         <link href="../content/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-        <link href="content/css/app.css" rel="stylesheet" />
+        <link href="content/css/app.css" rel="stylesheet"/>
+
+        <!-- Up here to stop FOUC -->
+        <script src="../content/libs/angularjs/angular.min.js"></script>
     </head>
-    <body ng-controller="CoilCtrl">
+    <body ng-controller="CoilCtrl" ng-cloak>
         <nav class="navbar navbar-inverse" role="navigation">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -62,7 +65,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="http://vapez.fr" target="{{ target }}"><small>by Vapez.FR</small></a>
+                <a class="navbar-brand" href="https://vapez.fr" target="{{ target }}"><small>by Vapez.FR</small></a>
             </div>
 
             <div class="collapse navbar-collapse"  id="bs-example-navbar-collapse-1">
@@ -76,10 +79,10 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ res.Social }}<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="http://facebook.com/vapez" target="blank">FaceBook</a></li>
-                            <li><a href="http://plus.google.com/+VapezFr" target="blank">Google+</a></li>
+                            <li><a href="https://facebook.com/vapez" target="blank">FaceBook</a></li>
+                            <li><a href="https://plus.google.com/+VapezFr" target="blank">Google+</a></li>
                             <li><a href="https://twitter.com/vapezfr" target="blank">Twitter</a></li>
-                            <li><a href="http://www.pinterest.com/vapezfr/?change_language=fr" target="blank">Pinterest</a></li>
+                            <li><a href="https://www.pinterest.com/vapezfr/?change_language=fr" target="blank">Pinterest</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -241,11 +244,10 @@
         <!-- scripts -->
         <script src="../content/libs/jquery/jquery-1.11.3.min.js"></script>
         <script src="../content/libs/bootstrap/js/bootstrap.min.js"></script>
-        <script src="../content/libs/angularjs/angular.min.js"></script>
         <script src="../content/libs/angularjs/ui-bootstrap-tpls-0.14.3.min.js"></script>
         <script src="content/js/app.js"></script>
 
-        <!-- Analytics -->
+        <!-- Analytics / WP:95.85.15.149 / GH:192.30.252.153 -->
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
