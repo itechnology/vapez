@@ -1,6 +1,6 @@
 ﻿CACHE MANIFEST
 # https://developer.mozilla.org/en/docs/HTML/Using_the_application_cache
-# version 20170201
+# version 20170202
 CACHE:
 embed.html
 help.html
@@ -25,6 +25,7 @@ content/img/apple-touch-icon.png
 content/img/apple-touch-icon-76x76.png
 content/img/apple-touch-icon-120x120.png
 content/img/apple-touch-icon-152x152.png
+content/img/android-small.png
 content/img/safe-vape-chart.jpg
 # These are allowed to load when a connection is availiable
 NETWORK:
